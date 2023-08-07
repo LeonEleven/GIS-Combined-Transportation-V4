@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.4.202307131110" AlpVersion="8.8.2">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.4.202307181708" AlpVersion="8.8.2">
 <Model>
 	<Id>1685604887146</Id>
 	<Name><![CDATA[GIS-Combined-Transportation-V4]]></Name>
@@ -5175,7 +5175,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[-1]]></Code>
+							<Code><![CDATA[0]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -5541,14 +5541,14 @@ currentAreaTask = null;]]></EntryAction>
 	}
 	currentStrategy = 1;
 }
-// System.out.println("truckId:" + this.id);
-// System.out.println("currentAreaTask.index:" + currentAreaTask.index);
-// System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
-// System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
-// System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
-// System.out.println("currentAreaTask.type:" + currentAreaTask.type);
-// System.out.println("currentAreaTask.state:" + currentAreaTask.state);
-// System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
+//System.out.println("truckId:" + this.id);
+//System.out.println("currentAreaTask.index:" + currentAreaTask.index);
+//System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
+//System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
+//System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
+//System.out.println("currentAreaTask.type:" + currentAreaTask.type);
+//System.out.println("currentAreaTask.state:" + currentAreaTask.state);
+//System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
 currentArea = main.area.get(currentAreaTask.areaId);
 currentAreaTask.startTime = date();
 startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAction>
@@ -9394,7 +9394,7 @@ pendingOrderList.add(msg);
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-12490271</Color>
-					<Text><![CDATA[GIS-Combined-Transportation-V3]]></Text>
+					<Text><![CDATA[GIS-Combined-Transportation-V4]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>24</Size>
