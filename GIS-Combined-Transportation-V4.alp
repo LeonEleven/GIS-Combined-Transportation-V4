@@ -518,8 +518,8 @@ if (deliveryOrderList.size() == testOrderNumber && stopFlag) {
 		int rowNum = result_excelFile.getLastRowNum(1) + 1;
 		result_excelFile.setCellValue(order.id, 1, rowNum, 1);
 		result_excelFile.setCellValue(order.customerId, 1, rowNum, 2);
-		//result_excelFile.setCellValue(order.administrativeDistrict, 1, rowNum, 3);
-		//result_excelFile.setCellValue(order.street, 1, rowNum, 4);
+		// result_excelFile.setCellValue(order.administrativeDistrict, 1, rowNum, 3);
+		// result_excelFile.setCellValue(order.street, 1, rowNum, 4);
 		result_excelFile.setCellValue(order.endLongitude, 1, rowNum, 5);
 		result_excelFile.setCellValue(order.endLatitude, 1, rowNum, 6);
 		result_excelFile.setCellValue(map.getDistanceByRoute(supermarket.get(0).getLatitude(), supermarket.get(0).getLongitude(), order.endLatitude, order.endLongitude), 1, rowNum, 7);
@@ -658,7 +658,7 @@ initMercator();
 initAreaTruckList();
 // 配置车辆
 initTruck();
-//配置参数
+// 配置参数
 initParam();
 // 创建excel
 createExcel();]]></Body>
@@ -3963,16 +3963,16 @@ startFlag = true;]]></ActionCode>
 					<ShowLabel>true</ShowLabel>
 					<OnReceive><![CDATA[main.deliveryOrderList.add(msg);
 deliveryOrderList.add(msg);
-//for (AreaTask task : msg.areaTaskList) {
-//	System.out.println("==========START==========");
-//	System.out.println("task.index:" + task.index);
-//	System.out.println("task.orderId:" + task.orderId);
-//	System.out.println("task.supermarketId:" + task.supermarketId);
-//	System.out.println("task.customerId:" + task.customerId);
-//	System.out.println("task.areaId:" + task.areaId);
-//	System.out.println("task.truckId:" + task.truckId);
-//	System.out.println("==========END==========");
-//}
+// for (AreaTask task : msg.areaTaskList) {
+// System.out.println("==========START==========");
+// System.out.println("task.index:" + task.index);
+// System.out.println("task.orderId:" + task.orderId);
+// System.out.println("task.supermarketId:" + task.supermarketId);
+// System.out.println("task.customerId:" + task.customerId);
+// System.out.println("task.areaId:" + task.areaId);
+// System.out.println("task.truckId:" + task.truckId);
+// System.out.println("==========END==========");
+// }
 // for(int i = 0;i<msg.areaTaskList.size();i=i+2){
 // AreaTask task1 = msg.areaTaskList.get(i);
 // AreaTask task2 = msg.areaTaskList.get(i+1);
@@ -4665,10 +4665,10 @@ ArrayList<double[]> areafinailyLonlat = new ArrayList<double[]>();
 for (double[] midPoint : areaMidPointList) {
 	areafinailyLonlat.add(main.mercatorToLonLat(main.reverseTransformCoordinates(main.supermarket.get(0).supermarket_mercator, this.customer_mercator, midPoint)));
 }
-//for (double[] lonlat : areafinailyLonlat) {
-//	System.out.println("最后的经纬度坐标:");
-//	System.out.println(Arrays.toString(lonlat));
-//}
+// for (double[] lonlat : areafinailyLonlat) {
+// System.out.println("最后的经纬度坐标:");
+// System.out.println(Arrays.toString(lonlat));
+// }
 
 // START============================
 // 给order赋值
@@ -4908,7 +4908,7 @@ send(deliveryOrder, main.supermarket.get(0));]]></Body>
 			<Name><![CDATA[Truck]]></Name>
 			<Import><![CDATA[import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-//import org.graalvm.compiler.asm.aarch64.AArch64Assembler.SystemHint;]]></Import>
+// import org.graalvm.compiler.asm.aarch64.AArch64Assembler.SystemHint;]]></Import>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1685931320938</Id>
@@ -5518,7 +5518,7 @@ currentAreaTask = null;]]></EntryAction>
 			currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 		}
 	}
-} else if (usedPosition > totalPosition * 2 / 3) {
+} else if (usedPosition > totalPosition * 2 / 3 && usedPosition < totalPosition) {
 	// 0:订单取货;1:交接取货;2:交接送货;3:客户送货
 	if (type1TaskList.size() > 0) {
 		currentAreaTask = type1TaskList.get(0);
@@ -5540,15 +5540,35 @@ currentAreaTask = null;]]></EntryAction>
 		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 	}
 	currentStrategy = 1;
+} else if (usedPosition == totalPosition) {
+	if (type3TaskList.size() > 0) {
+		currentAreaTask = type3TaskList.get(0);
+		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+		if (currentAreaTask.isGot == false) {
+			currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
+		}
+	} else if (type2TaskList.size() > 0) {
+		currentAreaTask = type2TaskList.get(0);
+		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+		if (currentAreaTask.isGot == false) {
+			currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
+		}
+	} else if (type1TaskList.size() > 0) {
+		currentAreaTask = type1TaskList.get(0);
+		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+	} else if (type0TaskList.size() > 0) {
+		currentAreaTask = type0TaskList.get(0);
+		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+	}
 }
-//System.out.println("truckId:" + this.id);
-//System.out.println("currentAreaTask.index:" + currentAreaTask.index);
-//System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
-//System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
-//System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
-//System.out.println("currentAreaTask.type:" + currentAreaTask.type);
-//System.out.println("currentAreaTask.state:" + currentAreaTask.state);
-//System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
+// System.out.println("truckId:" + this.id);
+// System.out.println("currentAreaTask.index:" + currentAreaTask.index);
+// System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
+// System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
+// System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
+// System.out.println("currentAreaTask.type:" + currentAreaTask.type);
+// System.out.println("currentAreaTask.state:" + currentAreaTask.state);
+// System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
 currentArea = main.area.get(currentAreaTask.areaId);
 currentAreaTask.startTime = date();
 startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAction>
@@ -5585,7 +5605,67 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 // System.out.println("currentTask.nextTruckId:"+currentTask.nextTruckId);
 // System.out.println("currentTask.type:"+currentTask.type);
 // System.out.println("currentTask.state:"+currentTask.state);
-// System.out.println("currentTask.isGot:"+currentTask.isGot);]]></Action>
+// System.out.println("currentTask.isGot:"+currentTask.isGot);
+if (currentAreaTask.type == 1 && currentAreaTask.state == 2 && currentAreaTask.isGot == false) {
+	System.out.println("==========异常START==========");
+	System.out.println("truckId:" + this.id);
+	System.out.println("currentAreaTask.index:" + currentAreaTask.index);
+	System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
+	System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
+	System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
+	System.out.println("currentAreaTask.type:" + currentAreaTask.type);
+	System.out.println("currentAreaTask.state:" + currentAreaTask.state);
+	System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
+	System.out.println("==========Order START==========");
+	DeliveryOrder order = findOrderById(currentAreaTask.orderId);
+	System.out.println("order.id:" + order.id);
+	System.out.println("order.state:" + order.state);
+	System.out.println("==========Order END==========");
+	System.out.println("==========areaTaskList START==========");
+	for (AreaTask areaTask : order.areaTaskList) {
+		System.out.println("areaTask.index:" + areaTask.index);
+		System.out.println("areaTask.orderId:" + areaTask.orderId);
+		System.out.println("areaTask.areaId:" + areaTask.areaId);
+		System.out.println("areaTask.truckId:" + areaTask.truckId);
+		System.out.println("areaTask.type:" + areaTask.type);
+		System.out.println("areaTask.state:" + areaTask.state);
+		System.out.println("areaTask.isGot:" + areaTask.isGot);
+	}
+	System.out.println("==========areaTaskList END==========");
+	System.out.println("==========异常END==========");
+	currentAreaTask.state = 0;
+}
+if (currentAreaTask.type == 2 && currentAreaTask.state == 2 && currentAreaTask.isGot == true) {
+	System.out.println("==========异常START==========");
+	System.out.println("truckId:" + this.id);
+	System.out.println("currentAreaTask.index:" + currentAreaTask.index);
+	System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
+	System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
+	System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
+	System.out.println("currentAreaTask.type:" + currentAreaTask.type);
+	System.out.println("currentAreaTask.state:" + currentAreaTask.state);
+	System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
+	System.out.println("==========Order START==========");
+	DeliveryOrder order = findOrderById(currentAreaTask.orderId);
+	System.out.println("order.id:" + order.id);
+	System.out.println("order.state:" + order.state);
+	System.out.println("==========Order END==========");
+	System.out.println("==========areaTaskList START==========");
+	for (AreaTask areaTask : order.areaTaskList) {
+		System.out.println("areaTask.index:" + areaTask.index);
+		System.out.println("areaTask.orderId:" + areaTask.orderId);
+		System.out.println("areaTask.areaId:" + areaTask.areaId);
+		System.out.println("areaTask.truckId:" + areaTask.truckId);
+		System.out.println("areaTask.type:" + areaTask.type);
+		System.out.println("areaTask.state:" + areaTask.state);
+		System.out.println("areaTask.isGot:" + areaTask.isGot);
+	}
+	System.out.println("==========areaTaskList END==========");
+	System.out.println("==========异常END==========");
+	currentAreaTask.state = 0;
+
+}
+]]></Action>
 					</Properties>	
 				</StatechartElement>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
@@ -5639,22 +5719,22 @@ currentOrder.totalDistance += distance;
 currentOrder.totalCost += cost;
 Set<Integer> orderIdSet = new HashSet<>();
 for (AreaTask areaTask : type0TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type1TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type2TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type3TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
@@ -5705,7 +5785,7 @@ if (areaTaskToReceiveNum - areaTaskToDeliveryNum > 0) {
 	areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
 	areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
 } else if (areaTaskToReceiveNum - areaTaskToDeliveryNum < 0) {
-		if (exchangeTruck.totalPosition - exchangeTruck.usedPosition >= areaTaskToDeliveryNum - areaTaskToReceiveNum) {
+	if (exchangeTruck.totalPosition - exchangeTruck.usedPosition >= areaTaskToDeliveryNum - areaTaskToReceiveNum) {
 		areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
 		areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
 		this.usedPosition = this.usedPosition + areaTaskToReceiveNum - areaTaskToDeliveryNum;
@@ -5717,45 +5797,45 @@ if (areaTaskToReceiveNum - areaTaskToDeliveryNum > 0) {
 		exchangeTruck.usedPosition = exchangeTruck.totalPosition;
 	}
 }
-for(int i = 0;i<areaTaskToReceiveExecutionNum;i++){
+for (int i = 0; i < areaTaskToReceiveExecutionNum; i++) {
 	AreaTask areaTask = areaTaskToReceiveList.get(i);
 	DeliveryOrder order = findOrderById(areaTask.orderId);
-	if(areaTask.startTime == null){
+	if (areaTask.startTime == null) {
 		areaTask.startTime = date();
 	}
-	if(!areaTask.equals(currentAreaTask)){
+	if (!areaTask.equals(currentAreaTask)) {
 		areaTask.endTime = areaTask.startTime;
 	}
 	areaTask.state = 3;
 	areaTask.isGot = true;
-	order.areaTaskList.get(areaTask.index+1).state = 0;
-	order.areaTaskList.get(areaTask.index+1).isGot = true;
-	order.areaTaskList.get(areaTask.index-1).state = 3;
-	order.areaTaskList.get(areaTask.index-1).isGot = false;
-	order.areaTaskList.get(areaTask.index-2).state = 3;
-	order.areaTaskList.get(areaTask.index-2).isGot = false;
+	order.areaTaskList.get(areaTask.index + 1).state = 0;
+	order.areaTaskList.get(areaTask.index + 1).isGot = true;
+	order.areaTaskList.get(areaTask.index - 1).state = 3;
+	order.areaTaskList.get(areaTask.index - 1).isGot = false;
+	order.areaTaskList.get(areaTask.index - 2).state = 3;
+	order.areaTaskList.get(areaTask.index - 2).isGot = false;
 }
-for(int i = 0;i<areaTaskToDeliveryExecutionNum;i++){
+for (int i = 0; i < areaTaskToDeliveryExecutionNum; i++) {
 	AreaTask areaTask = areaTaskToDeliveryList.get(i);
 	DeliveryOrder order = findOrderById(areaTask.orderId);
-	if(areaTask.startTime == null){
+	if (areaTask.startTime == null) {
 		areaTask.startTime = date();
 	}
-	if(!areaTask.equals(currentAreaTask)){
+	if (!areaTask.equals(currentAreaTask)) {
 		areaTask.endTime = areaTask.startTime;
 	}
 	areaTask.state = 3;
 	areaTask.isGot = false;
-	order.areaTaskList.get(areaTask.index-1).state = 3;
-	order.areaTaskList.get(areaTask.index-1).isGot = false;
-	order.areaTaskList.get(areaTask.index+1).state = 3;
-	order.areaTaskList.get(areaTask.index+1).isGot = true;
-	order.areaTaskList.get(areaTask.index+2).state = 0;
-	order.areaTaskList.get(areaTask.index+2).isGot = true;
-	if(order.areaTaskList.get(areaTask.index+1).truckId == -1){
-		order.areaTaskList.get(areaTask.index+1).truckId = exchangeTruck.id;
-		order.areaTaskList.get(areaTask.index+2).truckId = exchangeTruck.id;
-		send(order,exchangeTruck);
+	order.areaTaskList.get(areaTask.index - 1).state = 3;
+	order.areaTaskList.get(areaTask.index - 1).isGot = false;
+	order.areaTaskList.get(areaTask.index + 1).state = 3;
+	order.areaTaskList.get(areaTask.index + 1).isGot = true;
+	order.areaTaskList.get(areaTask.index + 2).state = 0;
+	order.areaTaskList.get(areaTask.index + 2).isGot = true;
+	if (order.areaTaskList.get(areaTask.index + 1).truckId == -1) {
+		order.areaTaskList.get(areaTask.index + 1).truckId = exchangeTruck.id;
+		order.areaTaskList.get(areaTask.index + 2).truckId = exchangeTruck.id;
+		send(order, exchangeTruck);
 	}
 }
 startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAction>
@@ -5826,14 +5906,14 @@ type3TaskList.removeAll(removeType3TaskList);
 // System.out.println("type1TaskList:" + type1TaskList.size());
 // System.out.println("type2TaskList:" + type2TaskList.size());
 // System.out.println("type3TaskList:" + type3TaskList.size());
-//ArrayList removeDeliveryOrderList = new ArrayList<DeliveryOrder>();
-//for (DeliveryOrder order : deliveryOrderList) {
-//	if (order.state == 3) {
-//		removeDeliveryOrderList.add(order);
-//	}
-//}
+// ArrayList removeDeliveryOrderList = new ArrayList<DeliveryOrder>();
+// for (DeliveryOrder order : deliveryOrderList) {
+// if (order.state == 3) {
+// removeDeliveryOrderList.add(order);
+// }
+// }
 // System.out.println("removeDeliveryOrderList:"+removeDeliveryOrderList.size());
-//deliveryOrderList.removeAll(removeDeliveryOrderList);
+// deliveryOrderList.removeAll(removeDeliveryOrderList);
 // System.out.println("deliveryOrderList:"+deliveryOrderList.size());]]></Action>
 					</Properties>	
 				</StatechartElement>
@@ -5888,22 +5968,22 @@ currentOrder.totalDistance += distance;
 currentOrder.totalCost += cost;
 Set<Integer> orderIdSet = new HashSet<>();
 for (AreaTask areaTask : type0TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type1TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type2TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type3TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
@@ -6003,7 +6083,7 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 // System.out.println("task.isGot:" + task.distance);
 // }
 System.out.println("==========异常START==========");
-System.out.println("truckId:"+this.id);
+System.out.println("truckId:" + this.id);
 System.out.println("currentAreaTask.index:" + currentAreaTask.index);
 System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
 System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
@@ -6018,14 +6098,14 @@ System.out.println("order.state:" + order.state);
 System.out.println("==========Order END==========");
 System.out.println("==========areaTaskList START==========");
 
-for(AreaTask areaTask:order.areaTaskList){
-System.out.println("areaTask.index:" + areaTask.index);
-System.out.println("areaTask.orderId:" + areaTask.orderId);
-System.out.println("areaTask.areaId:" + areaTask.areaId);
-System.out.println("areaTask.truckId:" + areaTask.truckId);
-System.out.println("areaTask.type:" + areaTask.type);
-System.out.println("areaTask.state:" + areaTask.state);
-System.out.println("areaTask.isGot:" + areaTask.isGot);
+for (AreaTask areaTask : order.areaTaskList) {
+	System.out.println("areaTask.index:" + areaTask.index);
+	System.out.println("areaTask.orderId:" + areaTask.orderId);
+	System.out.println("areaTask.areaId:" + areaTask.areaId);
+	System.out.println("areaTask.truckId:" + areaTask.truckId);
+	System.out.println("areaTask.type:" + areaTask.type);
+	System.out.println("areaTask.state:" + areaTask.state);
+	System.out.println("areaTask.isGot:" + areaTask.isGot);
 }
 System.out.println("==========areaTaskList END==========");
 
@@ -6084,22 +6164,22 @@ currentOrder.totalDistance += distance;
 currentOrder.totalCost += cost;
 Set<Integer> orderIdSet = new HashSet<>();
 for (AreaTask areaTask : type0TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type1TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type2TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type3TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
@@ -6129,13 +6209,13 @@ for (DeliveryOrder order : deliveryOrderList) {
 		order.areaTaskList.get(areaTask.index - 1).state = 3;
 		order.areaTaskList.get(areaTask.index - 1).isGot = false;
 		this.usedPosition--;
-//		System.out.println("==========type3START==========");
-//		System.out.println("truckId:"+this.id);
-//		System.out.println("areaTask.orderId:" + currentAreaTask.orderId);
-//		System.out.println("areaTask.type:" + currentAreaTask.type);
-//		System.out.println("areaTask.state:" + currentAreaTask.state);
-//		System.out.println("areaTask.isGot:" + currentAreaTask.isGot);
-//		System.out.println("==========type3END==========");
+		// System.out.println("==========type3START==========");
+		// System.out.println("truckId:"+this.id);
+		// System.out.println("areaTask.orderId:" + currentAreaTask.orderId);
+		// System.out.println("areaTask.type:" + currentAreaTask.type);
+		// System.out.println("areaTask.state:" + currentAreaTask.state);
+		// System.out.println("areaTask.isGot:" + currentAreaTask.isGot);
+		// System.out.println("==========type3END==========");
 	}
 }
 startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAction>
@@ -6193,22 +6273,22 @@ currentOrder.totalDistance += distance;
 currentOrder.totalCost += cost;
 Set<Integer> orderIdSet = new HashSet<>();
 for (AreaTask areaTask : type0TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type1TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type2TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
 for (AreaTask areaTask : type3TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state!=3) {
+	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
 		orderIdSet.add(areaTask.orderId);
 	}
 }
@@ -6259,7 +6339,7 @@ if (areaTaskToReceiveNum - areaTaskToDeliveryNum > 0) {
 	areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
 	areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
 } else if (areaTaskToReceiveNum - areaTaskToDeliveryNum < 0) {
-		if (exchangeTruck.totalPosition - exchangeTruck.usedPosition >= areaTaskToDeliveryNum - areaTaskToReceiveNum) {
+	if (exchangeTruck.totalPosition - exchangeTruck.usedPosition >= areaTaskToDeliveryNum - areaTaskToReceiveNum) {
 		areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
 		areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
 		this.usedPosition = this.usedPosition + areaTaskToReceiveNum - areaTaskToDeliveryNum;
@@ -6271,45 +6351,45 @@ if (areaTaskToReceiveNum - areaTaskToDeliveryNum > 0) {
 		exchangeTruck.usedPosition = exchangeTruck.totalPosition;
 	}
 }
-for(int i = 0;i<areaTaskToReceiveExecutionNum;i++){
+for (int i = 0; i < areaTaskToReceiveExecutionNum; i++) {
 	AreaTask areaTask = areaTaskToReceiveList.get(i);
 	DeliveryOrder order = findOrderById(areaTask.orderId);
-	if(areaTask.startTime == null){
+	if (areaTask.startTime == null) {
 		areaTask.startTime = date();
 	}
-	if(!areaTask.equals(currentAreaTask)){
+	if (!areaTask.equals(currentAreaTask)) {
 		areaTask.endTime = areaTask.startTime;
 	}
 	areaTask.state = 3;
 	areaTask.isGot = true;
-	order.areaTaskList.get(areaTask.index+1).state = 0;
-	order.areaTaskList.get(areaTask.index+1).isGot = true;
-	order.areaTaskList.get(areaTask.index-1).state = 3;
-	order.areaTaskList.get(areaTask.index-1).isGot = false;
-	order.areaTaskList.get(areaTask.index-2).state = 3;
-	order.areaTaskList.get(areaTask.index-2).isGot = false;
+	order.areaTaskList.get(areaTask.index + 1).state = 0;
+	order.areaTaskList.get(areaTask.index + 1).isGot = true;
+	order.areaTaskList.get(areaTask.index - 1).state = 3;
+	order.areaTaskList.get(areaTask.index - 1).isGot = false;
+	order.areaTaskList.get(areaTask.index - 2).state = 3;
+	order.areaTaskList.get(areaTask.index - 2).isGot = false;
 }
-for(int i = 0;i<areaTaskToDeliveryExecutionNum;i++){
+for (int i = 0; i < areaTaskToDeliveryExecutionNum; i++) {
 	AreaTask areaTask = areaTaskToDeliveryList.get(i);
 	DeliveryOrder order = findOrderById(areaTask.orderId);
-	if(areaTask.startTime == null){
+	if (areaTask.startTime == null) {
 		areaTask.startTime = date();
 	}
-	if(!areaTask.equals(currentAreaTask)){
+	if (!areaTask.equals(currentAreaTask)) {
 		areaTask.endTime = areaTask.startTime;
 	}
 	areaTask.state = 3;
 	areaTask.isGot = false;
-	order.areaTaskList.get(areaTask.index-1).state = 3;
-	order.areaTaskList.get(areaTask.index-1).isGot = false;
-	order.areaTaskList.get(areaTask.index+1).state = 3;
-	order.areaTaskList.get(areaTask.index+1).isGot = true;
-	order.areaTaskList.get(areaTask.index+2).state = 0;
-	order.areaTaskList.get(areaTask.index+2).isGot = true;
-	if(order.areaTaskList.get(areaTask.index+1).truckId == -1){
-		order.areaTaskList.get(areaTask.index+1).truckId = exchangeTruck.id;
-		order.areaTaskList.get(areaTask.index+2).truckId = exchangeTruck.id;
-		send(order,exchangeTruck);
+	order.areaTaskList.get(areaTask.index - 1).state = 3;
+	order.areaTaskList.get(areaTask.index - 1).isGot = false;
+	order.areaTaskList.get(areaTask.index + 1).state = 3;
+	order.areaTaskList.get(areaTask.index + 1).isGot = true;
+	order.areaTaskList.get(areaTask.index + 2).state = 0;
+	order.areaTaskList.get(areaTask.index + 2).isGot = true;
+	if (order.areaTaskList.get(areaTask.index + 1).truckId == -1) {
+		order.areaTaskList.get(areaTask.index + 1).truckId = exchangeTruck.id;
+		order.areaTaskList.get(areaTask.index + 2).truckId = exchangeTruck.id;
+		send(order, exchangeTruck);
 	}
 }
 startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAction>
@@ -6445,7 +6525,7 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[currentAreaTask.type == 1 && currentAreaTask.state >= 0 && currentAreaTask.isGot == false]]></Condition>
+						<Condition><![CDATA[currentAreaTask.type == 1 && currentAreaTask.state == 0 && currentAreaTask.isGot == false]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
@@ -6535,7 +6615,7 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[currentOrder.areaTaskList.get(currentAreaTask.index - 1) != null && currentOrder.areaTaskList.get(currentAreaTask.index - 1).truckId !=-1 && currentOrder.areaTaskList.get(currentAreaTask.index - 1).state >= 2]]></Condition>
+						<Condition><![CDATA[currentOrder.areaTaskList.get(currentAreaTask.index - 1) != null && currentOrder.areaTaskList.get(currentAreaTask.index - 1).truckId != -1 && currentOrder.areaTaskList.get(currentAreaTask.index - 1).state >= 2]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
@@ -6847,7 +6927,7 @@ moveTo(currentAreaTask.endLatitude, currentAreaTask.endLongitude);]]></Action>
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[currentAreaTask.type == 2 && currentAreaTask.state >= 0 && currentAreaTask.isGot == true]]></Condition>
+						<Condition><![CDATA[currentAreaTask.type == 2 && currentAreaTask.state == 0 && currentAreaTask.isGot == true]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
@@ -7027,7 +7107,7 @@ moveTo(currentAreaTask.endLatitude, currentAreaTask.endLongitude);]]></Action>
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[currentOrder.areaTaskList.get(currentAreaTask.index + 1) != null && currentOrder.areaTaskList.get(currentAreaTask.index + 1).truckId !=-1 && currentOrder.areaTaskList.get(currentAreaTask.index + 1).state >= 2]]></Condition>
+						<Condition><![CDATA[currentOrder.areaTaskList.get(currentAreaTask.index + 1) != null && currentOrder.areaTaskList.get(currentAreaTask.index + 1).truckId != -1 && currentOrder.areaTaskList.get(currentAreaTask.index + 1).state >= 2]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
@@ -7206,8 +7286,8 @@ return -1; // 未找到目标元素，返回 -1]]></Body>
 						<Name><![CDATA[orderId]]></Name>
 						<Type><![CDATA[int]]></Type>
 					</Parameter>
-					<Body><![CDATA[for(DeliveryOrder order:deliveryOrderList){
-	if(order.id == orderId){
+					<Body><![CDATA[for (DeliveryOrder order : deliveryOrderList) {
+	if (order.id == orderId) {
 		return order;
 	}
 }
@@ -7226,7 +7306,7 @@ return null;]]></Body>
 					<OnReceive><![CDATA[for (int i = 0; i < msg.areaTaskList.size(); i = i + 2) {
 	if (msg.areaTaskList.get(i).truckId == this.id) {
 		AreaTask task1 = msg.areaTaskList.get(i);
-		if (task1.type == 0 && task1.state == 0 ) {
+		if (task1.type == 0 && task1.state == 0) {
 			type0TaskList.add(task1);
 		} else if (task1.type == 1 && task1.state == 0) {
 			type1TaskList.add(task1);
@@ -8475,8 +8555,8 @@ deliveryOrderList.add(msg);]]></OnReceive>
 						<Name><![CDATA[truckId]]></Name>
 						<Type><![CDATA[int]]></Type>
 					</Parameter>
-					<Body><![CDATA[for(Truck truck:truckList){
-	if(truck.id == truckId){
+					<Body><![CDATA[for (Truck truck : truckList) {
+	if (truck.id == truckId) {
 		return truck;
 	}
 }
@@ -8494,36 +8574,36 @@ return null;]]></Body>
 					<ShowLabel>true</ShowLabel>
 					<OnReceive><![CDATA[deliveryOrderList.add(msg);
 pendingOrderList.add(msg);
-//ArrayList<DeliveryOrder> removeAllList = new ArrayList<DeliveryOrder>();
-//for (DeliveryOrder order : pendingOrderList) {
-//	for (int i = 0; i < order.areaTaskList.size(); i = i + 2) {
-//		if (order.areaTaskList.get(i).areaId == this.id) {
-//			AreaTask task1 = msg.areaTaskList.get(i);
-//			AreaTask task2 = msg.areaTaskList.get(i + 1);
-//			int maxPosition = -1;
-//			int truckId = -1;
-//			for (Truck truck : this.truckList) {
-//				if (truck.totalPosition - truck.usedPosition > maxPosition) {
-//					maxPosition = truck.totalPosition - truck.usedPosition;
-//					truckId = truck.id;
-//				}
-//			}
-//			if (maxPosition > 0 && truckId != -1) {
-//				task1.truckId = truckId;
-//				task2.truckId = truckId;
-//				Truck truck = main.truck.get(truckId);
-//				truck.usedPosition++;
-//				removeAllList.add(order);
-//				if (order.state == 0) {
-//					order.state = 1;
-//				}
-//				send(order, truck);
-//			}
-//			break;
-//		}
-//	}
-//}
-//pendingOrderList.removeAll(removeAllList);]]></OnReceive>
+// ArrayList<DeliveryOrder> removeAllList = new ArrayList<DeliveryOrder>();
+// for (DeliveryOrder order : pendingOrderList) {
+// for (int i = 0; i < order.areaTaskList.size(); i = i + 2) {
+// if (order.areaTaskList.get(i).areaId == this.id) {
+// AreaTask task1 = msg.areaTaskList.get(i);
+// AreaTask task2 = msg.areaTaskList.get(i + 1);
+// int maxPosition = -1;
+// int truckId = -1;
+// for (Truck truck : this.truckList) {
+// if (truck.totalPosition - truck.usedPosition > maxPosition) {
+// maxPosition = truck.totalPosition - truck.usedPosition;
+// truckId = truck.id;
+// }
+// }
+// if (maxPosition > 0 && truckId != -1) {
+// task1.truckId = truckId;
+// task2.truckId = truckId;
+// Truck truck = main.truck.get(truckId);
+// truck.usedPosition++;
+// removeAllList.add(order);
+// if (order.state == 0) {
+// order.state = 1;
+// }
+// send(order, truck);
+// }
+// break;
+// }
+// }
+// }
+// pendingOrderList.removeAll(removeAllList);]]></OnReceive>
 					<HandleReceiveInConnections>false</HandleReceiveInConnections>
 					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
 					<AgentLinkBidirectional>true</AgentLinkBidirectional>
