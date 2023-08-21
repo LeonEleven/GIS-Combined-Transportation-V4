@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.4.202307181708" AlpVersion="8.8.2">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.4.202307131110" AlpVersion="8.8.2">
 <Model>
 	<Id>1685604887146</Id>
 	<Name><![CDATA[GIS-Combined-Transportation-V4]]></Name>
@@ -180,7 +180,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[10000.00]]></Code>
+							<Code><![CDATA[16000.00]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -195,7 +195,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[10000.00]]></Code>
+							<Code><![CDATA[16000.00]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -225,7 +225,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[60000]]></Code>
+							<Code><![CDATA[fullDayOrderNumber / fullDayTime / 60 / 60]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -240,7 +240,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[4500]]></Code>
+							<Code><![CDATA[6500]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -255,7 +255,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[7500]]></Code>
+							<Code><![CDATA[9500]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -270,7 +270,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[15000]]></Code>
+							<Code><![CDATA[18000]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -411,6 +411,105 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1691551545861</Id>
+					<Name><![CDATA[truckType0Multiplier]]></Name>
+					<X>-140</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1691551580968</Id>
+					<Name><![CDATA[truckType1Multiplier]]></Name>
+					<X>-140</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1691551620676</Id>
+					<Name><![CDATA[truckType2Multiplier]]></Name>
+					<X>-140</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1691994598058</Id>
+					<Name><![CDATA[supermarket_new_coordinate]]></Name>
+					<X>-640</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double[]]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1691994598060</Id>
+					<Name><![CDATA[customer_new_coordinate]]></Name>
+					<X>-640</X><Y>640</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double[]]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1692167007709</Id>
+					<Name><![CDATA[area27TruckMultiplier]]></Name>
+					<X>-140</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[truckType2Multiplier]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1692342991167</Id>
+					<Name><![CDATA[orderCompleteNum]]></Name>
+					<X>910</X><Y>-40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1685946576974</Id>
 					<Name><![CDATA[customer_probabilities]]></Name>
@@ -429,7 +528,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 				<Variable Class="CollectionVariable">
 					<Id>1685953866331</Id>
 					<Name><![CDATA[deliveryOrderList]]></Name>
-					<X>-140</X><Y>240</Y>
+					<X>-140</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -437,6 +536,66 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
 						<ElementClass><![CDATA[DeliveryOrder]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1691549484693</Id>
+					<Name><![CDATA[truckTemplateType0List]]></Name>
+					<X>-150</X><Y>470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Truck]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1691550390845</Id>
+					<Name><![CDATA[truckTemplateType1List]]></Name>
+					<X>-150</X><Y>490</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Truck]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1691550903394</Id>
+					<Name><![CDATA[truckTemplateType2List]]></Name>
+					<X>-150</X><Y>510</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Truck]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1691994763897</Id>
+					<Name><![CDATA[area_new_coordinate_list]]></Name>
+					<X>-640</X><Y>660</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[double[]]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -451,14 +610,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="cyclic">
+					<Properties TriggerType="rate" Mode="cyclic">
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 						</Timeout>
 						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
+							<Code><![CDATA[timeInterval]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_SECOND]]></Unit>
 						</Rate>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1686038400000</OccurrenceDate>
@@ -475,13 +634,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 					<Action><![CDATA[if (deliveryOrderList.size() < testOrderNumber) {
 	selectCustomer();
 } else {
-	startGeneratingOrders.suspend();
+	startGeneratingOrders.reset();
 }]]></Action>
 				</Event>
 				<Event>
 					<Id>1687767760922</Id>
 					<Name><![CDATA[stopSimulation]]></Name>
-					<X>900</X><Y>-10</Y>
+					<X>910</X><Y>-10</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -508,70 +667,19 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
 					<Action><![CDATA[boolean stopFlag = true;
+int num = 0;
 for (DeliveryOrder order : deliveryOrderList) {
 	if (order.state != 3) {
 		stopFlag = false;
+	} else if (order.state == 3) {
+		num++;
 	}
 }
+if (orderCompleteNum < num) {
+	orderCompleteNum = num;
+}
 if (deliveryOrderList.size() == testOrderNumber && stopFlag) {
-	for (DeliveryOrder order : deliveryOrderList) {
-		int rowNum = result_excelFile.getLastRowNum(1) + 1;
-		result_excelFile.setCellValue(order.id, 1, rowNum, 1);
-		result_excelFile.setCellValue(order.customerId, 1, rowNum, 2);
-		// result_excelFile.setCellValue(order.administrativeDistrict, 1, rowNum, 3);
-		// result_excelFile.setCellValue(order.street, 1, rowNum, 4);
-		result_excelFile.setCellValue(order.endLongitude, 1, rowNum, 5);
-		result_excelFile.setCellValue(order.endLatitude, 1, rowNum, 6);
-		result_excelFile.setCellValue(map.getDistanceByRoute(supermarket.get(0).getLatitude(), supermarket.get(0).getLongitude(), order.endLatitude, order.endLongitude), 1, rowNum, 7);
-		result_excelFile.setCellValue(order.totalDistance, 1, rowNum, 8);
-		result_excelFile.setCellValue(order.creationTime.toGMTString(), 1, rowNum, 9);
-		result_excelFile.setCellValue(order.completionTime.toGMTString(), 1, rowNum, 10);
-		result_excelFile.setCellValue(dateToTime(order.completionTime) - dateToTime(order.creationTime), 1, rowNum, 11);
-		result_excelFile.setCellValue(order.totalCost, 1, rowNum, 12);
-		result_excelFile.setCellValue(order.state, 1, rowNum, 13);
-		for (AreaTask areaTask : order.areaTaskList) {
-			int task_rowNum = result_excelFile.getLastRowNum(2) + 1;
-			result_excelFile.setCellValue(areaTask.index, 2, task_rowNum, 1);
-			result_excelFile.setCellValue(areaTask.orderId, 2, task_rowNum, 2);
-			result_excelFile.setCellValue(areaTask.customerId, 2, task_rowNum, 3);
-			result_excelFile.setCellValue(areaTask.truckId, 2, task_rowNum, 4);
-			result_excelFile.setCellValue(areaTask.endLongitude, 2, task_rowNum, 5);
-			result_excelFile.setCellValue(areaTask.endLatitude, 2, task_rowNum, 6);
-			// result_excelFile.setCellValue(areaTask.nextTruckId, 2, task_rowNum, 7);
-			if (areaTask.type == 0) {
-				result_excelFile.setCellValue("取货", 2, task_rowNum, 8);
-			} else if (areaTask.type == 1) {
-				result_excelFile.setCellValue("送货", 2, task_rowNum, 8);
-			}
-			// result_excelFile.setCellValue(task.state, 2, task_rowNum, 9);
-			if ((areaTask.type == 0 && areaTask.state == 3) || (areaTask.type == 1 && areaTask.state == 6)) {
-				result_excelFile.setCellValue("任务已完成", 2, task_rowNum, 9);
-			} else {
-				result_excelFile.setCellValue("任务未完成", 2, task_rowNum, 9);
-			}
-			// result_excelFile.setCellValue(task.isGot, 2, task_rowNum, 10);
-			if (areaTask.isGot) {
-				result_excelFile.setCellValue("货在车上", 2, task_rowNum, 10);
-			} else {
-				result_excelFile.setCellValue("货不在车上", 2, task_rowNum, 10);
-			}
-			if (areaTask.startTime != null) {
-				result_excelFile.setCellValue(areaTask.startTime.toGMTString(), 2, task_rowNum, 11);
-			}
-			if (areaTask.endTime != null) {
-				result_excelFile.setCellValue(areaTask.endTime.toGMTString(), 2, task_rowNum, 12);
-			}
-			// result_excelFile.setCellValue(task.distance,2,task_rowNum,13);
-		}
-	}
-	for (Truck item : truck) {
-		int truck_rowNum = result_excelFile.getLastRowNum(3) + 1;
-		result_excelFile.setCellValue(item.id, 3, truck_rowNum, 1);
-		result_excelFile.setCellValue(item.totalWaitTime, 3, truck_rowNum, 2);
-		result_excelFile.setCellValue(item.totalWorkTime, 3, truck_rowNum, 3);
-		result_excelFile.setCellValue(item.totalDistance, 3, truck_rowNum, 4);
-		result_excelFile.setCellValue(item.totalWaitTime * (laborRate + depreciationRate), 3, truck_rowNum, 5);
-	}
+	writeExcel();
 	System.out.println("last order finash");
 	this.stopSimulation();
 }]]></Action>
@@ -646,7 +754,7 @@ customer.get(customerId).generateOrder();]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[startGeneratingOrders.suspend();
+					<Body><![CDATA[startGeneratingOrders.reset();
 stopSimulation.suspend();
 // 初始化订单列表
 deliveryOrderList = new ArrayList<DeliveryOrder>();
@@ -654,10 +762,14 @@ deliveryOrderList = new ArrayList<DeliveryOrder>();
 initCustomerRandom();
 // 初始化摩卡托投影坐标
 initMercator();
+// 初始化货车模板
+initTruckTemplate();
+// 初始化货车
+initTruck();
 // 初始化area车队列表
 initAreaTruckList();
 // 配置车辆
-initTruck();
+initAreaAndTruckRadius();
 // 配置参数
 initParam();
 // 创建excel
@@ -691,7 +803,7 @@ return new double[]{x, y};
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1686034151827</Id>
 					<Name><![CDATA[initMercator]]></Name>
-					<X>-140</X><Y>130</Y>
+					<X>-140</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -707,12 +819,7 @@ for (int i = 0; i < customer.size(); i++) {
 // area_mercator
 for (int i = 0; i < area.size(); i++) {
 	area.get(i).area_mercator = lonLatToMercator(area.get(i).longitude, area.get(i).latitude);
-}
-// truck_mercator
-for (int i = 0; i < truck.size(); i++) {
-	truck.get(i).truck_mercator = lonLatToMercator(truck.get(i).longitude, truck.get(i).latitude);
-}
-]]></Body>
+}]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -1349,58 +1456,69 @@ return Math.sqrt(dx * dx + dy * dy);
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1686724620060</Id>
 					<Name><![CDATA[createExcel]]></Name>
-					<X>-140</X><Y>210</Y>
+					<X>-140</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[// order
 result_excelFile.setCellValue("订单Id", 1, 1, 1);
-result_excelFile.setCellValue("顾客Id", 1, 1, 2);
-result_excelFile.setCellValue("区", 1, 1, 3);
-result_excelFile.setCellValue("街道", 1, 1, 4);
-result_excelFile.setCellValue("经度", 1, 1, 5);
-result_excelFile.setCellValue("纬度", 1, 1, 6);
-result_excelFile.setCellValue("相对距离（米）", 1, 1, 7);
-result_excelFile.setCellValue("累计行驶里程（米）", 1, 1, 8);
-result_excelFile.setCellValue("订单开始时间", 1, 1, 9);
-result_excelFile.setCellValue("订单开始时间", 1, 1, 10);
-result_excelFile.setCellValue("累计耗时（分钟）", 1, 1, 11);
-result_excelFile.setCellValue("总成本（元）", 1, 1, 12);
-result_excelFile.setCellValue("状态", 1, 1, 13);
+result_excelFile.setCellValue("超市Id", 1, 1, 2);
+result_excelFile.setCellValue("顾客Id", 1, 1, 3);
+result_excelFile.setCellValue("相对距离（米）", 1, 1, 4);
+result_excelFile.setCellValue("累计行驶里程（米）", 1, 1, 5);
+result_excelFile.setCellValue("订单开始时刻", 1, 1, 6);
+result_excelFile.setCellValue("订单结束时刻", 1, 1, 7);
+result_excelFile.setCellValue("累计耗时（分钟）", 1, 1, 8);
+result_excelFile.setCellValue("总成本（元）", 1, 1, 9);
+result_excelFile.setCellValue("状态", 1, 1, 10);
 
-result_excelFile.setCellValue("任务次序", 2, 1, 1);
-result_excelFile.setCellValue("订单Id", 2, 1, 2);
-result_excelFile.setCellValue("顾客Id", 2, 1, 3);
-result_excelFile.setCellValue("当前车Id", 2, 1, 4);
-result_excelFile.setCellValue("经度", 2, 1, 5);
-result_excelFile.setCellValue("纬度", 2, 1, 6);
-result_excelFile.setCellValue("交接车的Id", 2, 1, 7);
-result_excelFile.setCellValue("类型", 2, 1, 8);
-result_excelFile.setCellValue("状态", 2, 1, 9);
-result_excelFile.setCellValue("货是否在车上", 2, 1, 10);
-result_excelFile.setCellValue("开始时间", 2, 1, 11);
-result_excelFile.setCellValue("结束时间", 2, 1, 12);
+result_excelFile.setCellValue("订单Id", 2, 1, 1);
+result_excelFile.setCellValue("任务次序", 2, 1, 2);
+result_excelFile.setCellValue("超市Id", 2, 1, 3);
+result_excelFile.setCellValue("顾客Id", 2, 1, 4);
+result_excelFile.setCellValue("当前区域Id", 2, 1, 5);
+result_excelFile.setCellValue("当前车Id", 2, 1, 6);
+result_excelFile.setCellValue("类型", 2, 1, 7);
+result_excelFile.setCellValue("状态", 2, 1, 8);
+result_excelFile.setCellValue("开始时刻", 2, 1, 9);
+result_excelFile.setCellValue("结束时刻", 2, 1, 10);
+result_excelFile.setCellValue("货是否在车上", 2, 1, 11);
 
-result_excelFile.setCellValue("货车Id", 3, 1, 1);
-result_excelFile.setCellValue("累计等待时间（分钟）", 3, 1, 2);
-result_excelFile.setCellValue("累计工作时间（分钟）", 3, 1, 3);
-result_excelFile.setCellValue("累计行驶里程（米）", 3, 1, 4);
-result_excelFile.setCellValue("空载等待成本（元）", 3, 1, 5);]]></Body>
+result_excelFile.setCellValue("区域Id", 3, 1, 1);
+result_excelFile.setCellValue("区", 3, 1, 2);
+result_excelFile.setCellValue("街道", 3, 1, 3);
+result_excelFile.setCellValue("类型", 3, 1, 4);
+result_excelFile.setCellValue("范围（米）", 3, 1, 5);
+result_excelFile.setCellValue("速度(千米/小时)", 3, 1, 6);
+result_excelFile.setCellValue("承接任务数量（个）", 3, 1, 7);
+result_excelFile.setCellValue("承接任务数占总任务数比率（%）", 3, 1, 8);
+
+result_excelFile.setCellValue("货车Id", 4, 1, 1);
+result_excelFile.setCellValue("区域Id", 4, 1, 2);
+result_excelFile.setCellValue("类型", 4, 1, 3);
+result_excelFile.setCellValue("范围（米）", 4, 1, 4);
+result_excelFile.setCellValue("速度(千米/小时)", 4, 1, 5);
+result_excelFile.setCellValue("累计等待时间（分钟）", 4, 1, 6);
+result_excelFile.setCellValue("累计工作时间（分钟）", 4, 1, 7);
+result_excelFile.setCellValue("累计行驶里程（米）", 4, 1, 8);
+result_excelFile.setCellValue("空载等待成本（元）", 4, 1, 9);
+result_excelFile.setCellValue("承接任务数量（个）", 4, 1, 10);
+result_excelFile.setCellValue("承接任务数占总任务数比率（%）", 4, 1, 11);]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1689661945585</Id>
 					<Name><![CDATA[initParam]]></Name>
-					<X>-140</X><Y>190</Y>
+					<X>-140</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[laborRate = dailyWages / 8 / 60 / 60;
 depreciationRate = truckCost / 6 / 360 / 12 / 60 / 60;
-timeInterval = fullDayTime * 60 * 60 * 1000 / fullDayOrderNumber;]]></Body>
+timeInterval = fullDayOrderNumber / fullDayTime / 60 / 60;]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -1551,14 +1669,14 @@ return closestIndex;]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1690352721388</Id>
 					<Name><![CDATA[initAreaTruckList]]></Name>
-					<X>-140</X><Y>150</Y>
+					<X>-140</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[for (Area area_item : area) {
 	area_item.truckList = new ArrayList<Truck>();
-	for (Truck truck_item : truck) {
+	for (Truck truck_item : trucks) {
 		if (truck_item.areaId == area_item.id) {
 			area_item.truckList.add(truck_item);
 		}
@@ -1569,8 +1687,8 @@ return closestIndex;]]></Body>
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1691116659713</Id>
-					<Name><![CDATA[initTruck]]></Name>
-					<X>-140</X><Y>170</Y>
+					<Name><![CDATA[initAreaAndTruckRadius]]></Name>
+					<X>-140</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1584,7 +1702,7 @@ return closestIndex;]]></Body>
 		item.activityRadius = radius_C;
 	}
 }
-for (Truck item : truck) {
+for (Truck item : trucks) {
 	if (item.type == 0) {
 		item.activityRadius = radius_A;
 	} else if (item.type == 1) {
@@ -1595,6 +1713,294 @@ for (Truck item : truck) {
 	item.totalPosition = truckPosition;
 }
 ]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1691548373369</Id>
+					<Name><![CDATA[initTruckTemplate]]></Name>
+					<X>-140</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[// 内环内
+truckTemplateType0List.add(0, new Truck(0, 0, "内环内", "内环内", 121.445759, 31.250853, 0, 4500, 20, 360, 0));
+truckTemplateType0List.add(1, new Truck(1, 1, "内环内", "内环内", 121.432512, 31.20501, 0, 4500, 20, 360, 0));
+truckTemplateType0List.add(2, new Truck(2, 2, "内环内", "内环内", 121.490883, 31.216694, 0, 4500, 20, 360, 0));
+truckTemplateType0List.add(3, new Truck(3, 3, "内环内", "内环内", 121.501647, 31.263062, 0, 4500, 20, 360, 0));
+truckTemplateType0List.add(4, new Truck(4, 4, "内环内", "内环内", 121.547185, 31.228199, 0, 4500, 20, 360, 0));
+truckTemplateType0List.add(5, new Truck(5, 5, "内环内", "内环内", 121.453836, 31.28022, 0, 4500, 20, 360, 0));
+// 中外环
+truckTemplateType1List.add(0, new Truck(6, 6, "中外环", "中外环", 121.485861, 31.327808, 1, 7500, 40, 360, 0));
+truckTemplateType1List.add(1, new Truck(7, 7, "中外环", "中外环", 121.547592, 31.313138, 1, 7500, 40, 360, 0));
+truckTemplateType1List.add(2, new Truck(8, 8, "中外环", "中外环", 121.602361, 31.265938, 1, 7500, 40, 360, 0));
+truckTemplateType1List.add(3, new Truck(9, 9, "中外环", "中外环", 121.604217, 31.183779, 1, 7500, 40, 360, 0));
+truckTemplateType1List.add(4, new Truck(10, 10, "中外环", "中外环", 121.511853, 31.16988, 1, 7500, 40, 360, 0));
+truckTemplateType1List.add(5, new Truck(11, 11, "中外环", "中外环", 121.426915, 31.145254, 1, 7500, 40, 360, 0));
+truckTemplateType1List.add(6, new Truck(12, 12, "中外环", "中外环", 121.375396, 31.186161, 1, 7500, 40, 360, 0));
+truckTemplateType1List.add(7, new Truck(13, 13, "中外环", "中外环", 121.380501, 31.254036, 1, 7500, 40, 360, 0));
+truckTemplateType1List.add(8, new Truck(14, 14, "中外环", "中外环", 121.404637, 31.331377, 1, 7500, 40, 360, 0));
+// 外环外
+truckTemplateType2List.add(0, new Truck(15, 15, "͢͢外环外", "͢͢外环外", 121.701623, 31.23158, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(1, new Truck(16, 16, "͢͢外环外", "͢͢外环外", 121.802572, 31.075863, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(2, new Truck(17, 17, "͢͢外环外", "͢͢外环外", 121.86523, 30.933616, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(3, new Truck(18, 18, "͢͢外环外", "͢͢外环外", 121.626846, 31.071593, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(4, new Truck(19, 19, "͢͢外环外", "͢͢外环外", 121.697884, 30.927375, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(5, new Truck(20, 20, "͢͢外环外", "͢͢外环外", 121.44738, 31.041699, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(6, new Truck(21, 21, "͢͢外环外", "͢͢外环外", 121.535867, 30.904922, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(7, new Truck(22, 22, "͢͢外环外", "͢͢外环外", 121.331476, 30.956236, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(8, new Truck(23, 23, "͢͢外环外", "͢͢外环外", 121.17569, 30.868557, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(9, new Truck(24, 24, "͢͢外环外", "͢͢外环外", 121.365125, 30.830039, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(10, new Truck(25, 25, "͢͢外环外", "͢͢外环外", 121.160734, 31.032089, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(11, new Truck(26, 26, "͢͢外环外", "͢͢外环外", 121.009933, 31.047038, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(12, new Truck(27, 27, "͢͢外环外", "͢͢外环外", 121.270407, 31.118551, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(13, new Truck(28, 28, "͢͢外环外", "͢͢外环外", 121.102159, 31.199604, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(14, new Truck(29, 29, "͢͢外环外", "͢͢外环外", 121.266669, 31.282718, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(15, new Truck(30, 30, "͢͢外环外", "͢͢外环外", 121.19563, 31.413634, 2, 15000, 60, 360, 0));
+truckTemplateType2List.add(16, new Truck(31, 31, "͢͢外环外", "͢͢外环外", 121.377588, 31.413634, 2, 15000, 60, 360, 0));]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1691551907434</Id>
+					<Name><![CDATA[initTruck]]></Name>
+					<X>-140</X><Y>190</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[int trucksSize = trucks.size();
+for (int i = 0; i < trucksSize; i++) {
+	Truck t = trucks.get(0);
+	remove_trucks(t);
+}
+for (int i = 0; i < truckType0Multiplier; i++) {
+	for (Truck t : truckTemplateType0List) {
+		add_trucks(trucks.size(), t.areaId, t.administrativeDistrict, t.street, t.longitude, t.latitude, t.type, t.activityRadius, t.velocity, t.totalPosition, t.usedPosition);
+	}
+}
+for (int i = 0; i < truckType1Multiplier; i++) {
+	for (Truck t : truckTemplateType1List) {
+		add_trucks(trucks.size(), t.areaId, t.administrativeDistrict, t.street, t.longitude, t.latitude, t.type, t.activityRadius, t.velocity, t.totalPosition, t.usedPosition);
+	}
+}
+for (int i = 0; i < truckType2Multiplier; i++) {
+	for (Truck t : truckTemplateType2List) {
+		add_trucks(trucks.size(), t.areaId, t.administrativeDistrict, t.street, t.longitude, t.latitude, t.type, t.activityRadius, t.velocity, t.totalPosition, t.usedPosition);
+	}
+}
+if (area27TruckMultiplier > truckType2Multiplier) {
+	int addNum = area27TruckMultiplier - truckType2Multiplier;
+	Truck t = truckTemplateType2List.get(12);
+	for (int i = 0; i < addNum; i++) {
+		add_trucks(trucks.size(), t.areaId, t.administrativeDistrict, t.street, t.longitude, t.latitude, t.type, t.activityRadius, t.velocity, t.totalPosition, t.usedPosition);
+	}
+}
+for (Truck t : trucks) {
+	t.setLatLon(t.latitude, t.longitude);
+	t.setSpeed(t.velocity / 3.6);
+	t.truck_mercator = lonLatToMercator(t.longitude, t.latitude);
+	// System.out.println("t.id: "+t.id);
+	// System.out.println("t.areaId: "+t.areaId);
+	// System.out.println("t.administrativeDistrict: "+t.administrativeDistrict);
+	// System.out.println("t.type: "+t.type);
+	// System.out.println("t.street: "+t.street);
+	// System.out.println("t.ac: "+t.activityRadius);
+	// System.out.println("t.velocity: "+t.velocity);
+	// System.out.println("t.totalPosition: "+t.totalPosition);
+	// System.out.println("t.usedPosition: "+t.usedPosition);
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1691994607092</Id>
+					<Name><![CDATA[nullNumCheck]]></Name>
+					<X>-640</X><Y>590</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[int nullAreaNum = 0;
+int nullPathNum = 0;
+double totalProbability = 0;
+int maxPathNum = 0;
+int maxPathNumCustomerId = -1;
+ArrayList<Customer> nullAreaCustomerList = new ArrayList<Customer>();
+ArrayList<Customer> nullPathCustomerList = new ArrayList<Customer>();
+for (Customer cus : customer) {
+	// System.out.println("========== customer " + cus.id + " ==========");
+	// 转换到新坐标系
+	supermarket_new_coordinate = transformCoordinates(supermarket.get(0).supermarket_mercator, cus.customer_mercator, supermarket.get(0).supermarket_mercator);
+	customer_new_coordinate = transformCoordinates(supermarket.get(0).supermarket_mercator, cus.customer_mercator, cus.customer_mercator);
+	// 更新区域的墨卡托坐标;
+	area_new_coordinate_list = new ArrayList<double[]>();
+	for (int i = 0; i < area.size(); i++) {
+		area_new_coordinate_list.add(i, transformCoordinates(supermarket.get(0).supermarket_mercator, cus.customer_mercator, area.get(i).area_mercator));
+	}
+	// 找到在范围内的点
+	double supermarket_customer_length = customer_new_coordinate[0] - supermarket_new_coordinate[0];
+	int[] areaIndexList = checkPointsInsideRectangle(supermarket_new_coordinate, customer_new_coordinate, area_new_coordinate_list, Rab);
+	ArrayList<double[]> areaPointList = new ArrayList<double[]>();
+	for (int i = 0; i < areaIndexList.length; i++) {
+		// truckId,new_coordinate_x,new_coordinate_y,type,activity_radius
+		areaPointList.add(new double[]{new Double(areaIndexList[i]), area_new_coordinate_list.get(areaIndexList[i])[0], area_new_coordinate_list.get(areaIndexList[i])[1], new Double(area.get(areaIndexList[i]).type), area.get(areaIndexList[i]).activityRadius});
+	}
+	// 使用自定义的比较器按照第一个值从小到大进行排序
+	Collections.sort(areaPointList, new Comparator<double[]>() {
+		@Override
+		public int compare(double[] o1, double[] o2) {
+			return Double.compare(o1[1], o2[1]);
+		}
+	});
+	// 路径规划
+	ArrayList<AreaNodE> areaNodeList = new ArrayList<AreaNodE>();
+	areaNodeList.add(new AreaNodE(-1.0, supermarket_new_coordinate[0], supermarket_new_coordinate[1], -1.0, 0.0, Double.MAX_VALUE));
+	for (int i = 0; i < areaPointList.size(); i++) {
+		areaNodeList.add(new AreaNodE(areaPointList.get(i)[0], areaPointList.get(i)[1], areaPointList.get(i)[2], areaPointList.get(i)[3], areaPointList.get(i)[4], Double.MAX_VALUE));
+		areaIndexList[i] = (int) areaPointList.get(i)[0];
+	}
+	areaNodeList.add(new AreaNodE(-2.0, customer_new_coordinate[0], customer_new_coordinate[1], -2.0, 0.0, Double.MAX_VALUE));
+	if (areaNodeList.size() == 2) {
+		nullAreaNum++;
+		totalProbability += cus.probability;
+		nullAreaCustomerList.add(cus);
+		// System.out.println("cus.id: " + cus.id);
+		// System.out.println("cus.probability: " + cus.probability);
+	}
+	ArrayList<AreaNodE> bestAreaPointList = findOptimalPathDijkstra(areaNodeList);
+	if (areaNodeList.size() != 2 && bestAreaPointList.size() == areaNodeList.size()) {
+		nullPathNum++;
+		nullPathCustomerList.add(cus);
+		// if (maxPathNum < bestAreaPointList.size()) {
+		// maxPathNum = bestAreaPointList.size();
+		// maxPathNumCustomerId = cus.id;
+		// }
+	}
+	if (maxPathNum < bestAreaPointList.size()) {
+		maxPathNum = bestAreaPointList.size();
+		maxPathNumCustomerId = cus.id;
+	}
+	// System.out.println("==========END==========");
+}
+System.out.println("customer总量: " + customer.size());
+System.out.println("矩形范围内找不到车的customer的数量: " + nullAreaNum);
+System.out.println("矩形范围内找不到车的customer占customer总量占比: " + (nullAreaNum * 100 / customer.size()) + "%");
+System.out.println("矩形范围内找不到车的customer的概率: " + (totalProbability) + "%");
+for (Customer cus : nullAreaCustomerList) {
+	System.out.println("customerId: " + cus.id);
+}
+System.out.println("找不到路径的customer数量: " + nullPathNum);
+System.out.println("找不到路径的customer数量占customer总量占比: " + nullPathNum * 100 / customer.size() + "%");
+System.out.println("最大路径节点数量: " + maxPathNum);
+System.out.println("最大路径节点数量对应的customerId: " + maxPathNumCustomerId);
+for (Customer cus : nullPathCustomerList) {
+	System.out.println("customerId: " + cus.id);
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1692153329696</Id>
+					<Name><![CDATA[writeExcel]]></Name>
+					<X>-140</X><Y>310</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[for (DeliveryOrder order : deliveryOrderList) {
+	int rowNum = result_excelFile.getLastRowNum(1) + 1;
+	result_excelFile.setCellValue(order.id, 1, rowNum, 1);
+	result_excelFile.setCellValue(order.supermarketId, 1, rowNum, 2);
+	result_excelFile.setCellValue(order.customerId, 1, rowNum, 3);
+	result_excelFile.setCellValue(map.getDistanceByRoute(supermarket.get(0).getLatitude(), supermarket.get(0).getLongitude(), order.endLatitude, order.endLongitude), 1, rowNum, 4);
+	result_excelFile.setCellValue(order.totalDistance, 1, rowNum, 5);
+	result_excelFile.setCellValue(order.creationTime.toGMTString(), 1, rowNum, 6);
+	result_excelFile.setCellValue(order.completionTime.toGMTString(), 1, rowNum, 7);
+	result_excelFile.setCellValue(dateToTime(order.completionTime) - dateToTime(order.creationTime), 1, rowNum, 8);
+	result_excelFile.setCellValue(order.totalCost, 1, rowNum, 9);
+	if (order.state == 3) {
+		result_excelFile.setCellValue("已完成", 1, rowNum, 10);
+	} else if (order.state == 2) {
+		result_excelFile.setCellValue("运输中", 1, rowNum, 10);
+	} else if (order.state == 1) {
+		result_excelFile.setCellValue("未取货", 1, rowNum, 10);
+	} else if (order.state == 0) {
+		result_excelFile.setCellValue("未分配", 1, rowNum, 10);
+	}
+	for (AreaTask areaTask : order.areaTaskList) {
+		int task_rowNum = result_excelFile.getLastRowNum(2) + 1;
+		result_excelFile.setCellValue(areaTask.orderId, 2, task_rowNum, 1);
+		result_excelFile.setCellValue(areaTask.index, 2, task_rowNum, 2);
+		result_excelFile.setCellValue(areaTask.supermarketId, 2, task_rowNum, 3);
+		result_excelFile.setCellValue(areaTask.customerId, 2, task_rowNum, 4);
+		result_excelFile.setCellValue(areaTask.areaId, 2, task_rowNum, 5);
+		result_excelFile.setCellValue(areaTask.truckId, 2, task_rowNum, 6);
+		if (areaTask.type == 0) {
+			result_excelFile.setCellValue("超市取货", 2, task_rowNum, 7);
+		} else if (areaTask.type == 1) {
+			result_excelFile.setCellValue("交接取货", 2, task_rowNum, 7);
+		} else if (areaTask.type == 2) {
+			result_excelFile.setCellValue("交接送货", 2, task_rowNum, 7);
+		} else if (areaTask.type == 3) {
+			result_excelFile.setCellValue("客户送货", 2, task_rowNum, 7);
+		}
+		if (areaTask.state == 3) {
+			result_excelFile.setCellValue("任务已完成", 2, task_rowNum, 8);
+		} else {
+			result_excelFile.setCellValue("任务未完成,type:" + areaTask.state, 2, task_rowNum, 8);
+		}
+		if (areaTask.startTime != null) {
+			result_excelFile.setCellValue(areaTask.startTime.toGMTString(), 2, task_rowNum, 9);
+		}
+		if (areaTask.endTime != null) {
+			result_excelFile.setCellValue(areaTask.endTime.toGMTString(), 2, task_rowNum, 10);
+		}
+		if (areaTask.isGot) {
+			result_excelFile.setCellValue("货在车上", 2, task_rowNum, 11);
+		} else {
+			result_excelFile.setCellValue("货不在车上", 2, task_rowNum, 11);
+		}
+	}
+}
+for (Area item : area) {
+	int area_rowNum = result_excelFile.getLastRowNum(3) + 1;
+	result_excelFile.setCellValue(item.id, 3, area_rowNum, 1);
+	result_excelFile.setCellValue(item.administrativeDistrict, 3, area_rowNum, 2);
+	result_excelFile.setCellValue(item.street, 3, area_rowNum, 3);
+	if (item.type == 0) {
+		result_excelFile.setCellValue("内环内", 3, area_rowNum, 4);
+	} else if (item.type == 1) {
+		result_excelFile.setCellValue("中外环", 3, area_rowNum, 4);
+	} else if (item.type == 2) {
+		result_excelFile.setCellValue("外环外", 3, area_rowNum, 4);
+	}
+	result_excelFile.setCellValue(item.activityRadius, 3, area_rowNum, 5);
+	result_excelFile.setCellValue(item.velocity, 3, area_rowNum, 6);
+	result_excelFile.setCellValue(item.deliveryOrderList.size(), 3, area_rowNum, 7);
+	result_excelFile.setCellValue(item.deliveryOrderList.size() * 100 / testOrderNumber, 3, area_rowNum, 8);
+}
+for (Truck item : trucks) {
+	int truck_rowNum = result_excelFile.getLastRowNum(4) + 1;
+	result_excelFile.setCellValue(item.id, 4, truck_rowNum, 1);
+	result_excelFile.setCellValue(item.areaId, 4, truck_rowNum, 2);
+	if (item.type == 0) {
+		result_excelFile.setCellValue("内环内", 4, truck_rowNum, 3);
+	} else if (item.type == 1) {
+		result_excelFile.setCellValue("中外环", 4, truck_rowNum, 3);
+	} else if (item.type == 2) {
+		result_excelFile.setCellValue("外环外", 4, truck_rowNum, 3);
+	}
+	result_excelFile.setCellValue(item.activityRadius, 4, truck_rowNum, 4);
+	result_excelFile.setCellValue(item.velocity, 4, truck_rowNum, 5);
+	result_excelFile.setCellValue(item.totalWaitTime, 4, truck_rowNum, 6);
+	result_excelFile.setCellValue(item.totalWorkTime, 4, truck_rowNum, 7);
+	result_excelFile.setCellValue(item.totalDistance, 4, truck_rowNum, 8);
+	result_excelFile.setCellValue(item.totalWaitTime * (laborRate + depreciationRate), 4, truck_rowNum, 9);
+	result_excelFile.setCellValue(item.deliveryOrderList.size(), 4, truck_rowNum, 10);
+	result_excelFile.setCellValue(item.deliveryOrderList.size() * 100 / testOrderNumber, 4, truck_rowNum, 11);
+}]]></Body>
 				</Function>
 			</Functions>
 			<Connectivity>
@@ -2140,7 +2546,7 @@ for (Truck item : truck) {
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1685931327638</Id>
-					<Name><![CDATA[truck]]></Name>
+					<Name><![CDATA[trucks]]></Name>
 					<X>10</X><Y>-130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2161,186 +2567,33 @@ for (Truck item : truck) {
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[id]]></Name>
-							<Value Class="DatabaseQueryCodeValue">
-								<Type>SELECT_UNIQUE_VALUE</Type>
-								<TableReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-								</TableReference>
-								<Condition>
-									<ColumnReference>
-									</ColumnReference>
-									<Operator>EQUALS</Operator>
-								</Condition>
-								<ColumnReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-									<ItemName><![CDATA[id]]></ItemName>
-								</ColumnReference>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[administrativeDistrict]]></Name>
-							<Value Class="DatabaseQueryCodeValue">
-								<Type>SELECT_UNIQUE_VALUE</Type>
-								<TableReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-								</TableReference>
-								<Condition>
-									<ColumnReference>
-									</ColumnReference>
-									<Operator>EQUALS</Operator>
-								</Condition>
-								<ColumnReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-									<ItemName><![CDATA[administrative_district]]></ItemName>
-								</ColumnReference>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[street]]></Name>
-							<Value Class="DatabaseQueryCodeValue">
-								<Type>SELECT_UNIQUE_VALUE</Type>
-								<TableReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-								</TableReference>
-								<Condition>
-									<ColumnReference>
-									</ColumnReference>
-									<Operator>EQUALS</Operator>
-								</Condition>
-								<ColumnReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-									<ItemName><![CDATA[street]]></ItemName>
-								</ColumnReference>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[totalPosition]]></Name>
-							<Value Class="DatabaseQueryCodeValue">
-								<Type>SELECT_UNIQUE_VALUE</Type>
-								<TableReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-								</TableReference>
-								<Condition>
-									<ColumnReference>
-									</ColumnReference>
-									<Operator>EQUALS</Operator>
-								</Condition>
-								<ColumnReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-									<ItemName><![CDATA[total_position]]></ItemName>
-								</ColumnReference>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[longitude]]></Name>
-							<Value Class="DatabaseQueryCodeValue">
-								<Type>SELECT_UNIQUE_VALUE</Type>
-								<TableReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-								</TableReference>
-								<Condition>
-									<ColumnReference>
-									</ColumnReference>
-									<Operator>EQUALS</Operator>
-								</Condition>
-								<ColumnReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-									<ItemName><![CDATA[longitude]]></ItemName>
-								</ColumnReference>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[latitude]]></Name>
-							<Value Class="DatabaseQueryCodeValue">
-								<Type>SELECT_UNIQUE_VALUE</Type>
-								<TableReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-								</TableReference>
-								<Condition>
-									<ColumnReference>
-									</ColumnReference>
-									<Operator>EQUALS</Operator>
-								</Condition>
-								<ColumnReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-									<ItemName><![CDATA[latitude]]></ItemName>
-								</ColumnReference>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[type]]></Name>
-							<Value Class="DatabaseQueryCodeValue">
-								<Type>SELECT_UNIQUE_VALUE</Type>
-								<TableReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-								</TableReference>
-								<Condition>
-									<ColumnReference>
-									</ColumnReference>
-									<Operator>EQUALS</Operator>
-								</Condition>
-								<ColumnReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-									<ItemName><![CDATA[type]]></ItemName>
-								</ColumnReference>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[activityRadius]]></Name>
-							<Value Class="DatabaseQueryCodeValue">
-								<Type>SELECT_UNIQUE_VALUE</Type>
-								<TableReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-								</TableReference>
-								<Condition>
-									<ColumnReference>
-									</ColumnReference>
-									<Operator>EQUALS</Operator>
-								</Condition>
-								<ColumnReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-									<ItemName><![CDATA[activity_radius]]></ItemName>
-								</ColumnReference>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[velocity]]></Name>
-							<Value Class="DatabaseQueryCodeValue">
-								<Type>SELECT_UNIQUE_VALUE</Type>
-								<TableReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-								</TableReference>
-								<Condition>
-									<ColumnReference>
-									</ColumnReference>
-									<Operator>EQUALS</Operator>
-								</Condition>
-								<ColumnReference>
-									<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
-									<ClassName><![CDATA[truck]]></ClassName>
-									<ItemName><![CDATA[velocity]]></ItemName>
-								</ColumnReference>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[areaId]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[administrativeDistrict]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[street]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[longitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[latitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[type]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[activityRadius]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[velocity]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[totalPosition]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[usedPosition]]></Name>
@@ -2369,15 +2622,15 @@ for (Truck item : truck) {
 						<Code><![CDATA[0]]></Code>
 					</RowCode>
 					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
+						<Code><![CDATA[getLatitude()]]></Code>
 					</LatitudeCode>
 					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
+						<Code><![CDATA[getLongitude()]]></Code>
 					</LongitudeCode>
 					<LocationNameCode Class="CodeValue">
 						<Code><![CDATA[""]]></Code>
 					</LocationNameCode>
-					<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+					<InitializationType>EMPTY</InitializationType>
 					<InitializationDatabaseTableQuery>
 						<TableReference>
 							<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
@@ -2550,6 +2803,7 @@ for (Truck item : truck) {
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
+					<PresentationId>1692154908190</PresentationId>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
 						<ClassName><![CDATA[Area]]></ClassName>
@@ -2860,6 +3114,26 @@ for (Truck item : truck) {
 								<ClassName><![CDATA[area]]></ClassName>
 								<ItemName><![CDATA[velocity]]></ItemName>
 							</Value>
+						</Item>
+						<Item>
+							<Key>
+								FAKE_PARAMETER_GIS_LOCATION_LONGITUDE_xjal
+							</Key>
+							<Value>
+								<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
+								<ClassName><![CDATA[area]]></ClassName>
+								<ItemName><![CDATA[longitude]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								FAKE_PARAMETER_GIS_LOCATION_LATITUDE_xjal
+							</Key>
+							<Value>
+								<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
+								<ClassName><![CDATA[area]]></ClassName>
+								<ItemName><![CDATA[latitude]]></ItemName>
+							</Value>
 						</Item>	
 					</ParameterToDatabaseColumnMapping>
 				</EmbeddedObject>
@@ -2958,7 +3232,7 @@ for (Truck item : truck) {
 				</EmbeddedObjectPresentation>
 				<EmbeddedObjectPresentation>
 					<Id>1685931329861</Id>
-					<Name><![CDATA[truck_presentation]]></Name>
+					<Name><![CDATA[trucks_presentation]]></Name>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -2979,7 +3253,7 @@ for (Truck item : truck) {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1685955174813</Id>
 					<Name><![CDATA[启动]]></Name>
-					<X>850</X><Y>470</Y>
+					<X>600</X><Y>570</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2990,11 +3264,16 @@ for (Truck item : truck) {
 						<TextColor/>
 						<Enabled>true</Enabled>
 						<EnableExpression><![CDATA[startFlag == false]]></EnableExpression>
-						<ActionCode><![CDATA[initTruck();
+						<ActionCode><![CDATA[// 初始化货车
+initTruck();
+// 初始化area车队列表
+initAreaTruckList();
+initAreaAndTruckRadius();
 initParam();
-startGeneratingOrders.start();
+startGeneratingOrders.restart();
 stopSimulation.start();
-startFlag = true;]]></ActionCode>
+startFlag = true;
+System.out.println("truck数量" + trucks.size());]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
@@ -3720,6 +3999,319 @@ startFlag = true;]]></ActionCode>
 					<Id>1691116398222</Id>
 					<Name><![CDATA[text22]]></Name>
 					<X>980</X><Y>420</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[个]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1691551636292</Id>
+					<Name><![CDATA[text23]]></Name>
+					<X>801</X><Y>460</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[A类车的数量]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Control Type="EditBox">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1691551636297</Id>
+					<Name><![CDATA[editbox12]]></Name>
+					<X>875</X><Y>529</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<FillColor/>
+						<TextColor/>
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<DefaultValueCode><![CDATA[10]]></DefaultValueCode>
+						<MinValue><![CDATA[1]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>truckType2Multiplier</Link>
+					</ExtendedProperties>
+				</Control>
+				<Text>
+					<Id>1691551636302</Id>
+					<Name><![CDATA[text24]]></Name>
+					<X>980</X><Y>540</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[个]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1691551636304</Id>
+					<Name><![CDATA[text25]]></Name>
+					<X>980</X><Y>500</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[个]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1691551636306</Id>
+					<Name><![CDATA[text26]]></Name>
+					<X>800</X><Y>540</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[C类车的数量]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Control Type="EditBox">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1691551636308</Id>
+					<Name><![CDATA[editbox13]]></Name>
+					<X>875</X><Y>449</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<FillColor/>
+						<TextColor/>
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<DefaultValueCode><![CDATA[10]]></DefaultValueCode>
+						<MinValue><![CDATA[1]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>truckType0Multiplier</Link>
+					</ExtendedProperties>
+				</Control>
+				<Text>
+					<Id>1691551636310</Id>
+					<Name><![CDATA[text27]]></Name>
+					<X>801</X><Y>500</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[B类车的数量]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1691551636312</Id>
+					<Name><![CDATA[text28]]></Name>
+					<X>980</X><Y>460</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[个]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Control Type="EditBox">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1691551636314</Id>
+					<Name><![CDATA[editbox14]]></Name>
+					<X>875</X><Y>489</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<FillColor/>
+						<TextColor/>
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<DefaultValueCode><![CDATA[10]]></DefaultValueCode>
+						<MinValue><![CDATA[1]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>truckType1Multiplier</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1691995555840</Id>
+					<Name><![CDATA[测试]]></Name>
+					<X>700</X><Y>570</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[// 初始化货车
+initTruck();
+// 初始化area车队列表
+initAreaTruckList();
+initAreaAndTruckRadius();
+nullNumCheck();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[测试]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+				<EmbeddedObjectPresentation>
+					<Id>1692154908190</Id>
+					<Name><![CDATA[area_presentation]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>31.073850803979564</Latitude>
+					<Longitude>121.43988272633528</Longitude>
+				</EmbeddedObjectPresentation>
+				<Control Type="EditBox">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1692166895627</Id>
+					<Name><![CDATA[editbox15]]></Name>
+					<X>875</X><Y>569</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<FillColor/>
+						<TextColor/>
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<DefaultValueCode><![CDATA[10]]></DefaultValueCode>
+						<MinValue><![CDATA[truckType2Multiplier]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>area27TruckMultiplier</Link>
+					</ExtendedProperties>
+				</Control>
+				<Text>
+					<Id>1692166895630</Id>
+					<Name><![CDATA[text29]]></Name>
+					<X>800</X><Y>580</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[27区车的数量]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1692166895632</Id>
+					<Name><![CDATA[text30]]></Name>
+					<X>980</X><Y>580</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4543,36 +5135,15 @@ DeliveryOrder deliveryOrder = new DeliveryOrder(nextId, main.supermarket.get(0).
 // 转换到新坐标系
 deliveryOrder.supermarket_new_coordinate = main.transformCoordinates(main.supermarket.get(0).supermarket_mercator, this.customer_mercator, main.supermarket.get(0).supermarket_mercator);
 deliveryOrder.customer_new_coordinate = main.transformCoordinates(main.supermarket.get(0).supermarket_mercator, this.customer_mercator, this.customer_mercator);
-// START============================
-// 更新车的墨卡托坐标;
-// deliveryOrder.truck_new_coordinate_list = new ArrayList<double[]>();
-// for (int i = 0; i < main.truck.size(); i++) {
-// deliveryOrder.truck_new_coordinate_list.add(i, main.transformCoordinates(main.supermarket.supermarket_mercator, this.customer_mercator, main.truck.get(i).truck_mercator));
-// }
-// END============================
+
 // 更新区域的墨卡托坐标;
 deliveryOrder.area_new_coordinate_list = new ArrayList<double[]>();
 for (int i = 0; i < main.area.size(); i++) {
-	deliveryOrder.area_new_coordinate_list.add(i, main.transformCoordinates(main.supermarket.get(0).supermarket_mercator, this.customer_mercator, main.truck.get(i).truck_mercator));
+	deliveryOrder.area_new_coordinate_list.add(i, main.transformCoordinates(main.supermarket.get(0).supermarket_mercator, this.customer_mercator, main.area.get(i).area_mercator));
 }
 
 // 找到在范围内的点
 double supermarket_customer_length = deliveryOrder.customer_new_coordinate[0] - deliveryOrder.supermarket_new_coordinate[0];
-// START============================
-// int[] truckIndexList = main.checkPointsInsideRectangle(deliveryOrder.supermarket_new_coordinate, deliveryOrder.customer_new_coordinate, deliveryOrder.truck_new_coordinate_list, main.Rab);
-// ArrayList<double[]> truckPointList = new ArrayList<double[]>();
-// for (int i = 0; i < truckIndexList.length; i++) {
-// truckId,new_coordinate_x,new_coordinate_y,type,activity_radius
-// truckPointList.add(new double[]{new Double(truckIndexList[i]), deliveryOrder.truck_new_coordinate_list.get(truckIndexList[i])[0], deliveryOrder.truck_new_coordinate_list.get(truckIndexList[i])[1], new Double(main.truck.get(truckIndexList[i]).type), main.truck.get(truckIndexList[i]).activity_radius});
-// }
-// 使用自定义的比较器按照第一个值从小到大进行排序
-// Collections.sort(truckPointList, new Comparator<double[]>() {
-// @Override
-// public int compare(double[] o1, double[] o2) {
-// return Double.compare(o1[1], o2[1]);
-// }
-// });
-// END============================
 int[] areaIndexList = main.checkPointsInsideRectangle(deliveryOrder.supermarket_new_coordinate, deliveryOrder.customer_new_coordinate, deliveryOrder.area_new_coordinate_list, main.Rab);
 ArrayList<double[]> areaPointList = new ArrayList<double[]>();
 for (int i = 0; i < areaIndexList.length; i++) {
@@ -4588,51 +5159,11 @@ Collections.sort(areaPointList, new Comparator<double[]>() {
 });
 
 // 路径规划
-// START============================
-// ArrayList<TruckNode> truckNodeList = new ArrayList<TruckNode>();
-// truckNodeList.add(new TruckNode(-1.0, deliveryOrder.supermarket_new_coordinate[0], deliveryOrder.supermarket_new_coordinate[1], -1.0, 0.0, Double.MAX_VALUE));
-// System.out.println("==========START==========");
-// for (int i = 0; i < truckPointList.size(); i++) {
-// truckNodeList.add(new TruckNode(truckPointList.get(i)[0], truckPointList.get(i)[1], truckPointList.get(i)[2], truckPointList.get(i)[3], truckPointList.get(i)[4], Double.MAX_VALUE));
-// truckIndexList[i] = (int) truckPointList.get(i)[0];
-// System.out.println("truckId:" + truckPointList.get(i)[0]);
-// System.out.println("new_coordinate_x:" + truckPointList.get(i)[1]);
-// System.out.println("new_coordinate_y:" + truckPointList.get(i)[2]);
-// System.out.println("type:" + truckPointList.get(i)[3]);
-// System.out.println("activity_radius:" + truckPointList.get(i)[4]);
-// System.out.println("deliveryOrder.supermarket_new_coordinate:" + deliveryOrder.supermarket_new_coordinate[0]+","+deliveryOrder.supermarket_new_coordinate[1]);
-// System.out.println("deliveryOrder.customer_new_coordinate:" + deliveryOrder.customer_new_coordinate[0]+","+deliveryOrder.customer_new_coordinate[1]);
-// }
-// System.out.println("==========END==========");
-// truckNodeList.add(new TruckNode(-2.0, deliveryOrder.customer_new_coordinate[0], deliveryOrder.customer_new_coordinate[1], -2.0, 0.0, Double.MAX_VALUE));
-// ArrayList<TruckNode> bestTruckPointList = main.findOptimalPathDijkstra(truckNodeList);
-// for (TruckNode bestTruckPoint : bestTruckPointList) {
-// System.out.println("bestTruckPoint.id:" + bestTruckPoint.id);
-// System.out.println("bestTruckPoint.x:" + bestTruckPoint.x);
-// System.out.println("bestTruckPoint.y:" + bestTruckPoint.y);
-// System.out.println("bestTruckPoint.type:" + bestTruckPoint.type);
-// System.out.println("bestTruckPoint.radius:" + bestTruckPoint.radius);
-// }
-// 寻找中转点
-// ArrayList<double[]> midPointList = main.getMidPoints(truckNodeList);
-// for (double[] midPoint : midPointList) {
-// System.out.println("中转点坐标列表:");
-// System.out.println(Arrays.toString(midPoint));
-// }
-// 将结果转换成经纬度坐标列表
-// ArrayList<double[]> finailyLonlat = new ArrayList<double[]>();
-// for (double[] midPoint : midPointList) {
-// finailyLonlat.add(main.mercatorToLonLat(main.reverseTransformCoordinates(main.supermarket.supermarket_mercator, this.customer_mercator, midPoint)));
-// }
-// for (double[] lonlat : finailyLonlat) {
-// System.out.println("最后的经纬度坐标:");
-// System.out.println(Arrays.toString(lonlat));
-// }
-// END============================
-// 路径规划
 ArrayList<AreaNodE> areaNodeList = new ArrayList<AreaNodE>();
 areaNodeList.add(new AreaNodE(-1.0, deliveryOrder.supermarket_new_coordinate[0], deliveryOrder.supermarket_new_coordinate[1], -1.0, 0.0, Double.MAX_VALUE));
-// System.out.println("==========START==========");
+// System.out.println("deliveryOrder:" + deliveryOrder.id);
+// System.out.println("==========areaPointList START==========");
+// System.out.println("areaPointList.size: " + areaPointList.size());
 for (int i = 0; i < areaPointList.size(); i++) {
 	areaNodeList.add(new AreaNodE(areaPointList.get(i)[0], areaPointList.get(i)[1], areaPointList.get(i)[2], areaPointList.get(i)[3], areaPointList.get(i)[4], Double.MAX_VALUE));
 	areaIndexList[i] = (int) areaPointList.get(i)[0];
@@ -4641,25 +5172,28 @@ for (int i = 0; i < areaPointList.size(); i++) {
 	// System.out.println("new_coordinate_y:" + areaPointList.get(i)[2]);
 	// System.out.println("type:" + areaPointList.get(i)[3]);
 	// System.out.println("activity_radius:" + areaPointList.get(i)[4]);
-	// System.out.println("deliveryOrder.supermarket_new_coordinate:" + deliveryOrder.supermarket_new_coordinate[0]+","+deliveryOrder.supermarket_new_coordinate[1]);
-	// System.out.println("deliveryOrder.customer_new_coordinate:" + deliveryOrder.customer_new_coordinate[0]+","+deliveryOrder.customer_new_coordinate[1]);
+	// System.out.println("deliveryOrder.supermarket_new_coordinate:" + deliveryOrder.supermarket_new_coordinate[0] + "," + deliveryOrder.supermarket_new_coordinate[1]);
+	// System.out.println("deliveryOrder.customer_new_coordinate:" + deliveryOrder.customer_new_coordinate[0] + "," + deliveryOrder.customer_new_coordinate[1]);
 }
-// System.out.println("==========END==========");
+// System.out.println("==========areaPointList END==========");
 areaNodeList.add(new AreaNodE(-2.0, deliveryOrder.customer_new_coordinate[0], deliveryOrder.customer_new_coordinate[1], -2.0, 0.0, Double.MAX_VALUE));
 ArrayList<AreaNodE> bestAreaPointList = main.findOptimalPathDijkstra(areaNodeList);
+// System.out.println("==========bestAreaPointList START==========");
+// System.out.println("bestAreaPointList.size: " + bestAreaPointList.size());
 // for (AreaNodE bestAreaPoint : bestAreaPointList) {
-// System.out.println("bestTruckPoint.id:" + bestTruckPoint.id);
-// System.out.println("bestTruckPoint.x:" + bestTruckPoint.x);
-// System.out.println("bestTruckPoint.y:" + bestTruckPoint.y);
-// System.out.println("bestTruckPoint.type:" + bestTruckPoint.type);
-// System.out.println("bestTruckPoint.radius:" + bestTruckPoint.radius);
+// System.out.println("bestAreaPoint.id:" + bestAreaPoint.id);
+// System.out.println("bestAreaPoint.x:" + bestAreaPoint.x);
+// System.out.println("bestAreaPoint.y:" + bestAreaPoint.y);
+// System.out.println("bestAreaPoint.type:" + bestAreaPoint.type);
+// System.out.println("bestAreaPoint.radius:" + bestAreaPoint.radius);
 // }
+// System.out.println("==========bestAreaPointList END==========");
 // 寻找中转点
-ArrayList<double[]> areaMidPointList = main.getMidPoints(areaNodeList);
-for (double[] midPoint : areaMidPointList) {
-	// System.out.println("中转点坐标列表:");
-	// System.out.println(Arrays.toString(midPoint));
-}
+ArrayList<double[]> areaMidPointList = main.getMidPoints(bestAreaPointList);
+// for (double[] midPoint : areaMidPointList) {
+// System.out.println("中转点坐标列表:");
+// System.out.println(Arrays.toString(midPoint));
+// }
 // 将结果转换成经纬度坐标列表
 ArrayList<double[]> areafinailyLonlat = new ArrayList<double[]>();
 for (double[] midPoint : areaMidPointList) {
@@ -4670,65 +5204,16 @@ for (double[] midPoint : areaMidPointList) {
 // System.out.println(Arrays.toString(lonlat));
 // }
 
-// START============================
-// 给order赋值
-// deliveryOrder.truckList = new ArrayList<Truck>();
-// for (double[] truckPoint : truckPointList) {
-// deliveryOrder.truckList.add(main.truck.get((int) truckPoint[0]));
-// }
-// 分配task
-// deliveryOrder.taskList = new ArrayList<Task>();
-// if (deliveryOrder.truckList.size() == 0) {
-// int truckIndex = main.findClosestPoint();
-// deliveryOrder.truckList.add(0, main.truck.get(truckIndex));
-// Task task_1 = new Task(0, deliveryOrder.id, deliveryOrder.customerId, truckIndex, main.supermarket.getLongitude(), main.supermarket.getLatitude(), -1, 0, 0, false, null, null, 0, 0);
-// Task task_2 = new Task(1, deliveryOrder.id, deliveryOrder.customerId, truckIndex, this.getLongitude(), this.getLatitude(), -2, 1, 0, false, null, null, 0, 0);
-// deliveryOrder.taskList.add(task_1);
-// deliveryOrder.taskList.add(task_2);
-// } else if (deliveryOrder.truckList.size() == 1) {
-// Task task_1 = new Task(0, deliveryOrder.id, deliveryOrder.customerId, deliveryOrder.truckList.get(0).id, main.supermarket.getLongitude(), main.supermarket.getLatitude(), -1, 0, 0, false, null, null, 0, 0);
-// Task task_2 = new Task(1, deliveryOrder.id, deliveryOrder.customerId, deliveryOrder.truckList.get(0).id, this.getLongitude(), this.getLatitude(), -2, 1, 0, false, null, null, 0, 0);
-// deliveryOrder.taskList.add(task_1);
-// deliveryOrder.taskList.add(task_2);
-// } else {
-// for (int i = 0; i < deliveryOrder.truckList.size(); i++) {
-// task{在tasklist内的index,order的id,customer的id,货车的的id,经度坐标,纬度坐标,下一个车的id(超市:-1,客户:-2),类型:取货0,送货1,任务完成情况:0表示初始化状态，1表示前往接货，2表示到达接货点，3表示接到货物，4表示前往送货，5表示到达送货点，6表示送到货物}
-// Task task_1 = new Task(2 * i, deliveryOrder.id, deliveryOrder.customerId, deliveryOrder.truckList.get(i).id, 0.0, 0.0, -3, 0, 0, false, null, null, 0, 0);
-// Task task_2 = new Task(2 * i + 1, deliveryOrder.id, deliveryOrder.customerId, deliveryOrder.truckList.get(i).id, 0.0, 0.0, -3, 1, 0, false, null, null, 0, 0);
-// if (i == 0) {
-// task_1.longitude = main.supermarket.getLongitude();
-// task_1.latitude = main.supermarket.getLatitude();
-// -1 表示超市
-// task_1.nextTruckId = -1;
-// task_2.longitude = finailyLonlat.get(i)[0];
-// task_2.latitude = finailyLonlat.get(i)[1];
-// task_2.nextTruckId = i + 1;
-// } else if (i == deliveryOrder.truckList.size() - 1) {
-// task_1.longitude = finailyLonlat.get(i - 1)[0];
-// task_1.latitude = finailyLonlat.get(i - 1)[1];
-// task_1.nextTruckId = i - 1;
-// task_2.longitude = this.getLongitude();
-// task_2.latitude = this.getLatitude();
-// -2 表示客户
-// task_2.nextTruckId = -2;
-// } else {
-// task_1.longitude = finailyLonlat.get(i - 1)[0];
-// task_1.latitude = finailyLonlat.get(i - 1)[1];
-// task_1.nextTruckId = i - 1;
-// task_2.longitude = finailyLonlat.get(i)[0];
-// task_2.latitude = finailyLonlat.get(i)[1];
-// task_2.nextTruckId = i + 1;
-// }
-// deliveryOrder.taskList.add(task_1);
-// deliveryOrder.taskList.add(task_2);
-// }
-// }
-// END============================
 // 给order赋值
 deliveryOrder.areaList = new ArrayList<Area>();
-for (double[] areaPoint : areaPointList) {
-	deliveryOrder.areaList.add(main.area.get((int) areaPoint[0]));
+for (AreaNodE bestAreaPoint : bestAreaPointList) {
+	if (bestAreaPoint.id > 0) {
+		deliveryOrder.areaList.add(main.area.get((int)bestAreaPoint.id));
+	}
 }
+// for (double[] areaPoint : areaPointList) {
+// deliveryOrder.areaList.add(main.area.get((int) areaPoint[0]));
+// }
 // 分配task
 deliveryOrder.areaTaskList = new ArrayList<AreaTask>();
 if (deliveryOrder.areaList.size() == 0) {
@@ -4896,6 +5381,28 @@ send(deliveryOrder, main.supermarket.get(0));]]></Body>
 			</Presentation>
 
 				</Group>
+				<Text>
+					<Id>1692325364000</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>2</X><Y>-5</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[id]]></Text>
+					<TextCode><![CDATA[this.id]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
@@ -4931,8 +5438,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
 				<RotateAnimationVertically>false</RotateAnimationVertically>
 				<VelocityCode Class="CodeUnitValue">
-					<Code><![CDATA[velocity]]></Code>
-					<Unit Class="SpeedUnits"><![CDATA[KPH]]></Unit>
+					<Code><![CDATA[velocity / 3.6]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
 				</VelocityCode>
 				<PhysicalLength Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
@@ -5004,7 +5511,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<Variable Class="PlainVariable">
 					<Id>1686106356623</Id>
 					<Name><![CDATA[truck_mercator]]></Name>
-					<X>160</X><Y>30</Y>
+					<X>160</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5055,7 +5562,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<Variable Class="PlainVariable">
 					<Id>1689831325083</Id>
 					<Name><![CDATA[totalDistance]]></Name>
-					<X>160</X><Y>80</Y>
+					<X>160</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5070,7 +5577,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<Variable Class="PlainVariable">
 					<Id>1689833603877</Id>
 					<Name><![CDATA[totalWaitTime]]></Name>
-					<X>160</X><Y>100</Y>
+					<X>160</X><Y>110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5082,7 +5589,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<Variable Class="PlainVariable">
 					<Id>1689833716121</Id>
 					<Name><![CDATA[totalWorkTime]]></Name>
-					<X>160</X><Y>120</Y>
+					<X>160</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5109,7 +5616,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<Variable Class="PlainVariable">
 					<Id>1690439448066</Id>
 					<Name><![CDATA[type1TaskList]]></Name>
-					<X>310</X><Y>30</Y>
+					<X>310</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5124,7 +5631,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<Variable Class="PlainVariable">
 					<Id>1690439451822</Id>
 					<Name><![CDATA[type2TaskList]]></Name>
-					<X>310</X><Y>50</Y>
+					<X>310</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5139,7 +5646,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<Variable Class="PlainVariable">
 					<Id>1690439455436</Id>
 					<Name><![CDATA[type3TaskList]]></Name>
-					<X>310</X><Y>70</Y>
+					<X>310</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5154,7 +5661,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<Variable Class="PlainVariable">
 					<Id>1690526486226</Id>
 					<Name><![CDATA[currentAreaTask]]></Name>
-					<X>310</X><Y>150</Y>
+					<X>310</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5166,8 +5673,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<Variable Class="PlainVariable">
 					<Id>1690527737859</Id>
 					<Name><![CDATA[currentStrategy]]></Name>
-					<Description><![CDATA[当前策略]]></Description>
-					<X>310</X><Y>170</Y>
+					<Description><![CDATA[当前策略012]]></Description>
+					<X>310</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5182,13 +5689,29 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 				<Variable Class="PlainVariable">
 					<Id>1690790763911</Id>
 					<Name><![CDATA[currentArea]]></Name>
-					<X>310</X><Y>130</Y>
+					<X>310</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[Area]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1692085437343</Id>
+					<Name><![CDATA[checkWaitTime]]></Name>
+					<Description><![CDATA[当前策略012]]></Description>
+					<X>310</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
@@ -5205,6 +5728,27 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 						<SdArray>false</SdArray>
 						<ParameterEditor>
 							<Id>0</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1690352899885</Id>
+					<Name><![CDATA[areaId]]></Name>
+					<X>10</X><Y>40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1690352899883</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -5247,27 +5791,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 						<SdArray>false</SdArray>
 						<ParameterEditor>
 							<Id>1686638675009</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1686120327153</Id>
-					<Name><![CDATA[totalPosition]]></Name>
-					<X>10</X><Y>240</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<ParameterEditor>
-							<Id>1686120327151</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -5381,9 +5904,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1690352899885</Id>
-					<Name><![CDATA[areaId]]></Name>
-					<X>10</X><Y>40</Y>
+					<Id>1686120327153</Id>
+					<Name><![CDATA[totalPosition]]></Name>
+					<X>10</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5393,7 +5916,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<ParameterEditor>
-							<Id>1690352899883</Id>
+							<Id>1686120327151</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -5413,9 +5936,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 						<Type><![CDATA[int]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
 						<ParameterEditor>
 							<Id>1690353556531</Id>
-							<Label><![CDATA[]]></Label>
+							<Label><![CDATA[usedPosition]]></Label>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -5435,7 +5961,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[currentOrder = null;
-currentArea = null;
 currentAreaTask = null;]]></EntryAction>
 						<FillColor/>
 					</Properties>
@@ -5450,7 +5975,6 @@ currentAreaTask = null;]]></EntryAction>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="110" Height="30">
 						<EntryAction><![CDATA[currentOrder = null;
-currentArea = null;
 currentAreaTask = null;]]></EntryAction>
 						<ExitAction><![CDATA[if (usedPosition < totalPosition * 1 / 3) {
 	// 0:订单取货;1:交接取货;2:交接送货;3:客户送货
@@ -5467,6 +5991,24 @@ currentAreaTask = null;]]></EntryAction>
 			currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
 		}
 	} else if (type3TaskList.size() > 0) {
+		// Map<Integer, Integer> idCount = new HashMap<>();
+		// for (AreaTask type3Task : type3TaskList) {
+		// idCount.put(type3Task.customerId, idCount.getOrDefault(type3Task.customerId, 0) + 1);
+		// }
+		// int mostCommonId = 0;
+		// int maxCount = 0;
+		// for (Map.Entry<Integer, Integer> entry : idCount.entrySet()) {
+		// if (entry.getValue() > maxCount) {
+		// mostCommonId = entry.getKey();
+		// maxCount = entry.getValue();
+		// }
+		// }
+		// for (AreaTask type3Task : type3TaskList) {
+		// if (type3Task.customerId == mostCommonId) {
+		// currentAreaTask = type3Task;
+		// currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+		// }
+		// }
 		currentAreaTask = type3TaskList.get(0);
 		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 		if (currentAreaTask.isGot == false) {
@@ -5490,6 +6032,24 @@ currentAreaTask = null;]]></EntryAction>
 				currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
 			}
 		} else if (type3TaskList.size() > 0) {
+			// Map<Integer, Integer> idCount = new HashMap<>();
+			// for (AreaTask type3Task : type3TaskList) {
+			// idCount.put(type3Task.customerId, idCount.getOrDefault(type3Task.customerId, 0) + 1);
+			// }
+			// int mostCommonId = 0;
+			// int maxCount = 0;
+			// for (Map.Entry<Integer, Integer> entry : idCount.entrySet()) {
+			// if (entry.getValue() > maxCount) {
+			// mostCommonId = entry.getKey();
+			// maxCount = entry.getValue();
+			// }
+			// }
+			// for (AreaTask type3Task : type3TaskList) {
+			// if (type3Task.customerId == mostCommonId) {
+			// currentAreaTask = type3Task;
+			// currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+			// }
+			// }
 			currentAreaTask = type3TaskList.get(0);
 			currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 			if (currentAreaTask.isGot == false) {
@@ -5508,6 +6068,24 @@ currentAreaTask = null;]]></EntryAction>
 				currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
 			}
 		} else if (type3TaskList.size() > 0) {
+			// Map<Integer, Integer> idCount = new HashMap<>();
+			// for (AreaTask type3Task : type3TaskList) {
+			// idCount.put(type3Task.customerId, idCount.getOrDefault(type3Task.customerId, 0) + 1);
+			// }
+			// int mostCommonId = 0;
+			// int maxCount = 0;
+			// for (Map.Entry<Integer, Integer> entry : idCount.entrySet()) {
+			// if (entry.getValue() > maxCount) {
+			// mostCommonId = entry.getKey();
+			// maxCount = entry.getValue();
+			// }
+			// }
+			// for (AreaTask type3Task : type3TaskList) {
+			// if (type3Task.customerId == mostCommonId) {
+			// currentAreaTask = type3Task;
+			// currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+			// }
+			// }
 			currentAreaTask = type3TaskList.get(0);
 			currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 			if (currentAreaTask.isGot == false) {
@@ -5518,7 +6096,7 @@ currentAreaTask = null;]]></EntryAction>
 			currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 		}
 	}
-} else if (usedPosition > totalPosition * 2 / 3 && usedPosition < totalPosition) {
+} else if (usedPosition > totalPosition * 2 / 3 && usedPosition <= totalPosition) {
 	// 0:订单取货;1:交接取货;2:交接送货;3:客户送货
 	if (type1TaskList.size() > 0) {
 		currentAreaTask = type1TaskList.get(0);
@@ -5530,6 +6108,24 @@ currentAreaTask = null;]]></EntryAction>
 			currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
 		}
 	} else if (type3TaskList.size() > 0) {
+		// Map<Integer, Integer> idCount = new HashMap<>();
+		// for (AreaTask type3Task : type3TaskList) {
+		// idCount.put(type3Task.customerId, idCount.getOrDefault(type3Task.customerId, 0) + 1);
+		// }
+		// int mostCommonId = 0;
+		// int maxCount = 0;
+		// for (Map.Entry<Integer, Integer> entry : idCount.entrySet()) {
+		// if (entry.getValue() > maxCount) {
+		// mostCommonId = entry.getKey();
+		// maxCount = entry.getValue();
+		// }
+		// }
+		// for (AreaTask type3Task : type3TaskList) {
+		// if (type3Task.customerId == mostCommonId) {
+		// currentAreaTask = type3Task;
+		// currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+		// }
+		// }
 		currentAreaTask = type3TaskList.get(0);
 		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 		if (currentAreaTask.isGot == false) {
@@ -5540,36 +6136,46 @@ currentAreaTask = null;]]></EntryAction>
 		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 	}
 	currentStrategy = 1;
-} else if (usedPosition == totalPosition) {
-	if (type3TaskList.size() > 0) {
-		currentAreaTask = type3TaskList.get(0);
-		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
-		if (currentAreaTask.isGot == false) {
-			currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
-		}
-	} else if (type2TaskList.size() > 0) {
-		currentAreaTask = type2TaskList.get(0);
-		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
-		if (currentAreaTask.isGot == false) {
-			currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
-		}
-	} else if (type1TaskList.size() > 0) {
-		currentAreaTask = type1TaskList.get(0);
-		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
-	} else if (type0TaskList.size() > 0) {
-		currentAreaTask = type0TaskList.get(0);
-		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
-	}
 }
-// System.out.println("truckId:" + this.id);
-// System.out.println("currentAreaTask.index:" + currentAreaTask.index);
-// System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
-// System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
-// System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
-// System.out.println("currentAreaTask.type:" + currentAreaTask.type);
-// System.out.println("currentAreaTask.state:" + currentAreaTask.state);
-// System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
-currentArea = main.area.get(currentAreaTask.areaId);
+// else if (usedPosition == totalPosition) {
+// if (type0TaskList.size() > 0) {
+// currentAreaTask = type0TaskList.get(0);
+// currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+// } else if (type2TaskList.size() > 0) {
+// currentAreaTask = type2TaskList.get(0);
+// currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+// if (currentAreaTask.isGot == false) {
+// currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
+// }
+// } else if (type3TaskList.size() > 0) {
+// Map<Integer, Integer> idCount = new HashMap<>();
+// for (AreaTask type3Task : type3TaskList) {
+// idCount.put(type3Task.customerId, idCount.getOrDefault(type3Task.customerId, 0) + 1);
+// }
+// int mostCommonId = 0;
+// int maxCount = 0;
+// for (Map.Entry<Integer, Integer> entry : idCount.entrySet()) {
+// if (entry.getValue() > maxCount) {
+// mostCommonId = entry.getKey();
+// maxCount = entry.getValue();
+// }
+// }
+// for (AreaTask type3Task : type3TaskList) {
+// if (type3Task.customerId == mostCommonId) {
+// currentAreaTask = type3Task;
+// currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+// }
+// }
+// currentAreaTask = type3TaskList.get(0);
+// currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+// if (currentAreaTask.isGot == false) {
+// currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
+// }
+// } else if (type1TaskList.size() > 0) {
+// currentAreaTask = type1TaskList.get(0);
+// currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+// }
+// }
 currentAreaTask.startTime = date();
 startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAction>
 						<FillColor/>
@@ -5584,30 +6190,8 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Properties>	
-						<Action><![CDATA[// System.out.println("currentOrder");
-// System.out.println("currentOrder.id:"+currentOrder.id);
-// System.out.println("currentOrder.customer_id:"+currentOrder.creationTime);
-// System.out.println("currentOrder.administrativeDistrict:"+currentOrder.administrativeDistrict);
-// System.out.println("currentOrder.street:"+currentOrder.street);
-// System.out.println("currentOrder.longitude:"+currentOrder.longitude);
-// System.out.println("currentOrder.latitude:"+currentOrder.latitude);
-// System.out.println("currentOrder.totalMiles:"+currentOrder.totalMiles);
-// System.out.println("currentOrder.completionTime:"+currentOrder.completionTime);
-// System.out.println("currentOrder.totalMiles:"+currentOrder.totalCost);
-// System.out.println("currentOrder.state:"+currentOrder.state);
-// System.out.println("currentTask");
-// System.out.println("currentTask.index:"+currentTask.index);
-// System.out.println("currentTask.orderId:"+currentTask.orderId);
-// System.out.println("currentTask.customerId:"+currentTask.customerId);
-// System.out.println("currentTask.truckId:"+currentTask.truckId);
-// System.out.println("currentTask.longitude:"+currentTask.longitude);
-// System.out.println("currentTask.latitude:"+currentTask.latitude);
-// System.out.println("currentTask.nextTruckId:"+currentTask.nextTruckId);
-// System.out.println("currentTask.type:"+currentTask.type);
-// System.out.println("currentTask.state:"+currentTask.state);
-// System.out.println("currentTask.isGot:"+currentTask.isGot);
-if (currentAreaTask.type == 1 && currentAreaTask.state == 2 && currentAreaTask.isGot == false) {
-	System.out.println("==========异常START==========");
+						<Action><![CDATA[if (currentAreaTask.type == 1 && currentAreaTask.state == 2 && currentAreaTask.isGot == false) {
+	System.out.println("==========异常case START==========");
 	System.out.println("truckId:" + this.id);
 	System.out.println("currentAreaTask.index:" + currentAreaTask.index);
 	System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
@@ -5632,11 +6216,37 @@ if (currentAreaTask.type == 1 && currentAreaTask.state == 2 && currentAreaTask.i
 		System.out.println("areaTask.isGot:" + areaTask.isGot);
 	}
 	System.out.println("==========areaTaskList END==========");
-	System.out.println("==========异常END==========");
-	currentAreaTask.state = 0;
+	System.out.println("==========异常case END==========");
+	if (findOrderById(currentAreaTask.orderId).areaTaskList.get(currentAreaTask.index - 1).state == 3) {
+		if (findOrderById(currentAreaTask.orderId).areaTaskList.get(currentAreaTask.index + 1).state == 3) {
+			currentAreaTask.state = 3;
+			currentAreaTask.isGot = false;
+			if (currentAreaTask.startTime == null) {
+				currentAreaTask.startTime = date();
+			}
+			if (currentAreaTask.endTime == null) {
+				currentAreaTask.endTime = date();
+			}
+		} else if (findOrderById(currentAreaTask.orderId).areaTaskList.get(currentAreaTask.index + 1).state != 3) {
+			currentAreaTask.state = 0;
+			currentAreaTask.startTime = null;
+		}
+	} else if (findOrderById(currentAreaTask.orderId).areaTaskList.get(currentAreaTask.index - 1).state != 3) {
+		currentAreaTask.state = 0;
+		currentAreaTask.startTime = null;
+	}
+	if (type1TaskList.size() > 2) {
+		currentAreaTask = type1TaskList.get(1);
+		currentAreaTask.startTime = date();
+		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+	}else {
+		currentAreaTask = type1TaskList.get(0);
+		currentAreaTask.startTime = date();
+		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);	
+	}
 }
 if (currentAreaTask.type == 2 && currentAreaTask.state == 2 && currentAreaTask.isGot == true) {
-	System.out.println("==========异常START==========");
+	System.out.println("==========异常case START==========");
 	System.out.println("truckId:" + this.id);
 	System.out.println("currentAreaTask.index:" + currentAreaTask.index);
 	System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
@@ -5661,9 +6271,29 @@ if (currentAreaTask.type == 2 && currentAreaTask.state == 2 && currentAreaTask.i
 		System.out.println("areaTask.isGot:" + areaTask.isGot);
 	}
 	System.out.println("==========areaTaskList END==========");
-	System.out.println("==========异常END==========");
-	currentAreaTask.state = 0;
-
+	System.out.println("==========异常case END==========");
+	if (findOrderById(currentAreaTask.orderId).areaTaskList.get(currentAreaTask.index + 1).state == 3) {
+		currentAreaTask.state = 3;
+		currentAreaTask.isGot = false;
+		if (currentAreaTask.startTime == null) {
+			currentAreaTask.startTime = date();
+		}
+		if (currentAreaTask.endTime == null) {
+			currentAreaTask.endTime = date();
+		}
+	} else if (findOrderById(currentAreaTask.orderId).areaTaskList.get(currentAreaTask.index + 1).state != 3) {
+		currentAreaTask.state = 0;
+		currentAreaTask.startTime = null;
+	}
+	if (type2TaskList.size() > 2) {
+		currentAreaTask = type2TaskList.get(1);
+		currentAreaTask.startTime = date();
+		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+	} else {
+		currentAreaTask = type2TaskList.get(0);
+		currentAreaTask.startTime = date();
+		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
+	}
 }
 ]]></Action>
 					</Properties>	
@@ -5690,7 +6320,8 @@ if (currentAreaTask.type == 2 && currentAreaTask.state == 2 && currentAreaTask.i
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentAreaTask.state = 2;]]></EntryAction>
+						<EntryAction><![CDATA[currentAreaTask.state = 2;
+checkWaitTime = 0;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -5703,142 +6334,188 @@ if (currentAreaTask.type == 2 && currentAreaTask.state == 2 && currentAreaTask.i
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentAreaTask.endTime = date();
-int length = 0;
-for (DeliveryOrder order : deliveryOrderList) {
-	if (order.state != 3) {
-		length++;
+						<EntryAction><![CDATA[if (currentAreaTask.state != 3) {
+	currentAreaTask.endTime = date();
+	int length = 0;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (order.state != 3) {
+			length++;
+		}
 	}
-}
-double distance = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
-double time = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
-this.totalDistance += distance;
-this.totalWorkTime += time;
-double cost = (distance / 1000.0 * main.distanceEnergyConsumption) / length + time * (main.laborRate + main.depreciationRate) / length;
-currentOrder.totalDistance += distance;
-currentOrder.totalCost += cost;
-Set<Integer> orderIdSet = new HashSet<>();
-for (AreaTask areaTask : type0TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	double distance = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
+	double time = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
+	this.totalDistance += distance;
+	this.totalWorkTime += time;
+	double cost = (distance / 1000.0 * main.distanceEnergyConsumption) / length + time * (main.laborRate + main.depreciationRate) / length;
+	currentOrder.totalDistance += distance;
+	currentOrder.totalCost += cost;
+	Set<Integer> orderIdSet = new HashSet<>();
+	for (AreaTask areaTask : type0TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type1TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type1TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type2TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type2TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type3TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type3TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (DeliveryOrder order : deliveryOrderList) {
-	if (!order.equals(currentOrder) && order.state != 3) {
-		order.totalCost += cost;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (!order.equals(currentOrder) && order.state != 3) {
+			order.totalCost += cost;
+		}
 	}
-}
-for (DeliveryOrder order : deliveryOrderList) {
-	if (!order.equals(currentOrder) && order.state != 3 && orderIdSet.contains(order.id)) {
-		order.totalDistance += distance;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (!order.equals(currentOrder) && order.state != 3 && orderIdSet.contains(order.id)) {
+			order.totalDistance += distance;
+		}
 	}
 }]]></EntryAction>
-						<ExitAction><![CDATA[Truck exchangeTruck = main.truck.get(currentOrder.areaTaskList.get(currentAreaTask.index - 1).truckId);
-ArrayList<AreaTask> areaTaskToReceiveList = new ArrayList<AreaTask>();
-areaTaskToReceiveList.add(currentAreaTask);
-for (AreaTask areaTask : type1TaskList) {
-	if (!areaTask.equals(currentAreaTask) && findOrderById(areaTask.orderId).areaTaskList.get(areaTask.index - 1).truckId == exchangeTruck.id) {
-		areaTaskToReceiveList.add(areaTask);
+						<ExitAction><![CDATA[if (currentAreaTask.state != 3) {
+	// if ((currentAreaTask.state == 2 && currentAreaTask.isGot == false) && (currentOrder.areaTaskList.get(currentAreaTask.index - 1).state == 2 && currentOrder.areaTaskList.get(currentAreaTask.index - 1).isGot == true)) {
+	Truck exchangeTruck = main.trucks.get(currentOrder.areaTaskList.get(currentAreaTask.index - 1).truckId);
+	ArrayList<AreaTask> areaTaskToReceiveList = new ArrayList<AreaTask>();
+	areaTaskToReceiveList.add(currentAreaTask);
+	for (AreaTask areaTask : type1TaskList) {
+		AreaTask beforeAreaTask = findOrderById(areaTask.orderId).areaTaskList.get(areaTask.index - 1);
+		if (!areaTask.equals(currentAreaTask) && areaTask.state == 0 && areaTask.isGot == false && beforeAreaTask.truckId == exchangeTruck.id && beforeAreaTask.state == 0 && beforeAreaTask.isGot == true) {
+			areaTaskToReceiveList.add(areaTask);
+		}
 	}
-}
-ArrayList<AreaTask> areaTaskToDeliveryList = new ArrayList<AreaTask>();
-for (AreaTask areaTask : type2TaskList) {
-	AreaTask afterAreaTask = findOrderById(areaTask.orderId).areaTaskList.get(areaTask.index + 1);
-	if (afterAreaTask.truckId == -1 && afterAreaTask.areaId == exchangeTruck.areaId) {
-		areaTaskToDeliveryList.add(areaTask);
-	} else if (afterAreaTask.truckId != -1 && afterAreaTask.truckId == exchangeTruck.id) {
-		areaTaskToDeliveryList.add(areaTask);
+	ArrayList<AreaTask> areaTaskToDeliveryList = new ArrayList<AreaTask>();
+	for (AreaTask areaTask : type2TaskList) {
+		AreaTask afterAreaTask = findOrderById(areaTask.orderId).areaTaskList.get(areaTask.index + 1);
+		if (areaTask.state == 0 && areaTask.isGot == true && afterAreaTask.state == 0 && afterAreaTask.isGot == false && ((afterAreaTask.truckId == -1 && afterAreaTask.areaId == exchangeTruck.areaId) || (afterAreaTask.truckId != -1 && afterAreaTask.truckId == exchangeTruck.id))) {
+			areaTaskToDeliveryList.add(areaTask);
+		}
 	}
-}
-int areaTaskToReceiveNum = areaTaskToReceiveList.size();
-int areaTaskToDeliveryNum = areaTaskToDeliveryList.size();
-int areaTaskToReceiveExecutionNum = 0;
-int areaTaskToDeliveryExecutionNum = 0;
-if (areaTaskToReceiveNum - areaTaskToDeliveryNum > 0) {
-	if (this.totalPosition - this.usedPosition >= areaTaskToReceiveNum - areaTaskToDeliveryNum) {
+	int areaTaskToReceiveNum = areaTaskToReceiveList.size();
+	int areaTaskToDeliveryNum = areaTaskToDeliveryList.size();
+	int areaTaskToReceiveExecutionNum = 0;
+	int areaTaskToDeliveryExecutionNum = 0;
+	if (areaTaskToReceiveNum - areaTaskToDeliveryNum > 0) {
+		if (this.totalPosition - this.usedPosition >= areaTaskToReceiveNum - areaTaskToDeliveryNum) {
+			areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
+			areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
+			this.usedPosition = this.usedPosition + areaTaskToReceiveNum - areaTaskToDeliveryNum;
+			exchangeTruck.usedPosition = exchangeTruck.usedPosition + areaTaskToDeliveryNum - areaTaskToReceiveNum;
+		} else {
+			areaTaskToReceiveExecutionNum = areaTaskToDeliveryNum + this.totalPosition - this.usedPosition;
+			areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
+			this.usedPosition = this.totalPosition;
+			exchangeTruck.usedPosition = exchangeTruck.usedPosition - this.totalPosition + this.usedPosition;
+		}
+	} else if (areaTaskToReceiveNum - areaTaskToDeliveryNum == 0) {
 		areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
 		areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
-		this.usedPosition = this.usedPosition + areaTaskToReceiveNum - areaTaskToDeliveryNum;
-		exchangeTruck.usedPosition = exchangeTruck.usedPosition + areaTaskToDeliveryNum - areaTaskToReceiveNum;
-	} else {
-		areaTaskToReceiveExecutionNum = areaTaskToDeliveryNum + this.totalPosition - this.usedPosition;
-		areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
-		this.usedPosition = this.totalPosition;
-		exchangeTruck.usedPosition = exchangeTruck.usedPosition - this.totalPosition + this.usedPosition;
+	} else if (areaTaskToReceiveNum - areaTaskToDeliveryNum < 0) {
+		if (exchangeTruck.totalPosition - exchangeTruck.usedPosition >= areaTaskToDeliveryNum - areaTaskToReceiveNum) {
+			areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
+			areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
+			this.usedPosition = this.usedPosition + areaTaskToReceiveNum - areaTaskToDeliveryNum;
+			exchangeTruck.usedPosition = exchangeTruck.usedPosition + areaTaskToDeliveryNum - areaTaskToReceiveNum;
+		} else {
+			areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
+			areaTaskToDeliveryExecutionNum = areaTaskToReceiveNum + exchangeTruck.totalPosition - exchangeTruck.usedPosition;
+			this.usedPosition = this.usedPosition - exchangeTruck.totalPosition + exchangeTruck.usedPosition;
+			exchangeTruck.usedPosition = exchangeTruck.totalPosition;
+		}
 	}
-} else if (areaTaskToReceiveNum - areaTaskToDeliveryNum == 0) {
-	areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
-	areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
-} else if (areaTaskToReceiveNum - areaTaskToDeliveryNum < 0) {
-	if (exchangeTruck.totalPosition - exchangeTruck.usedPosition >= areaTaskToDeliveryNum - areaTaskToReceiveNum) {
-		areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
-		areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
-		this.usedPosition = this.usedPosition + areaTaskToReceiveNum - areaTaskToDeliveryNum;
-		exchangeTruck.usedPosition = exchangeTruck.usedPosition + areaTaskToDeliveryNum - areaTaskToReceiveNum;
-	} else {
-		areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
-		areaTaskToDeliveryExecutionNum = areaTaskToReceiveNum + exchangeTruck.totalPosition - exchangeTruck.usedPosition;
-		this.usedPosition = this.usedPosition - exchangeTruck.totalPosition + exchangeTruck.usedPosition;
-		exchangeTruck.usedPosition = exchangeTruck.totalPosition;
+	for (int i = 0; i < areaTaskToReceiveExecutionNum; i++) {
+		AreaTask areaTask = areaTaskToReceiveList.get(i);
+		DeliveryOrder order = findOrderById(areaTask.orderId);
+		if (areaTask.startTime == null) {
+			areaTask.startTime = date();
+		}
+		if (areaTask.endTime == null) {
+			areaTask.endTime = date();
+		}
+		areaTask.state = 3;
+		areaTask.isGot = true;
+		order.areaTaskList.get(areaTask.index + 1).state = 0;
+		order.areaTaskList.get(areaTask.index + 1).isGot = true;
+		order.areaTaskList.get(areaTask.index - 1).state = 3;
+		order.areaTaskList.get(areaTask.index - 1).isGot = false;
+		if (order.areaTaskList.get(areaTask.index - 1).startTime == null) {
+			order.areaTaskList.get(areaTask.index - 1).startTime = date();
+		}
+		if (order.areaTaskList.get(areaTask.index - 1).endTime == null) {
+			order.areaTaskList.get(areaTask.index - 1).endTime = date();
+		}
+		order.areaTaskList.get(areaTask.index - 2).state = 3;
+		order.areaTaskList.get(areaTask.index - 2).isGot = false;
+		if (order.areaTaskList.get(areaTask.index - 2).startTime == null) {
+			order.areaTaskList.get(areaTask.index - 2).startTime = date();
+		}
+		if (order.areaTaskList.get(areaTask.index - 2).endTime == null) {
+			order.areaTaskList.get(areaTask.index - 2).endTime = date();
+		}
 	}
-}
-for (int i = 0; i < areaTaskToReceiveExecutionNum; i++) {
-	AreaTask areaTask = areaTaskToReceiveList.get(i);
-	DeliveryOrder order = findOrderById(areaTask.orderId);
-	if (areaTask.startTime == null) {
-		areaTask.startTime = date();
+	for (int i = 0; i < areaTaskToDeliveryExecutionNum; i++) {
+		AreaTask areaTask = areaTaskToDeliveryList.get(i);
+		DeliveryOrder order = findOrderById(areaTask.orderId);
+		if (areaTask.startTime == null) {
+			areaTask.startTime = date();
+		}
+		if (areaTask.endTime == null) {
+			areaTask.endTime = date();
+		}
+		areaTask.state = 3;
+		areaTask.isGot = false;
+		order.areaTaskList.get(areaTask.index - 1).state = 3;
+		order.areaTaskList.get(areaTask.index - 1).isGot = false;
+		if (order.areaTaskList.get(areaTask.index - 1).startTime == null) {
+			order.areaTaskList.get(areaTask.index - 1).startTime = date();
+		}
+		if (order.areaTaskList.get(areaTask.index - 1).endTime == null) {
+			order.areaTaskList.get(areaTask.index - 1).endTime = date();
+		}
+		order.areaTaskList.get(areaTask.index + 1).state = 3;
+		order.areaTaskList.get(areaTask.index + 1).isGot = true;
+		if (order.areaTaskList.get(areaTask.index + 1).startTime == null) {
+			order.areaTaskList.get(areaTask.index + 1).startTime = date();
+		}
+		if (order.areaTaskList.get(areaTask.index + 1).endTime == null) {
+			order.areaTaskList.get(areaTask.index + 1).endTime = date();
+		}
+		order.areaTaskList.get(areaTask.index + 2).state = 0;
+		order.areaTaskList.get(areaTask.index + 2).isGot = true;
+		if (order.areaTaskList.get(areaTask.index + 1).truckId == -1) {
+			order.areaTaskList.get(areaTask.index + 1).truckId = exchangeTruck.id;
+			order.areaTaskList.get(areaTask.index + 2).truckId = exchangeTruck.id;
+			send(order, exchangeTruck);
+		}
 	}
-	if (!areaTask.equals(currentAreaTask)) {
-		areaTask.endTime = areaTask.startTime;
-	}
-	areaTask.state = 3;
-	areaTask.isGot = true;
-	order.areaTaskList.get(areaTask.index + 1).state = 0;
-	order.areaTaskList.get(areaTask.index + 1).isGot = true;
-	order.areaTaskList.get(areaTask.index - 1).state = 3;
-	order.areaTaskList.get(areaTask.index - 1).isGot = false;
-	order.areaTaskList.get(areaTask.index - 2).state = 3;
-	order.areaTaskList.get(areaTask.index - 2).isGot = false;
-}
-for (int i = 0; i < areaTaskToDeliveryExecutionNum; i++) {
-	AreaTask areaTask = areaTaskToDeliveryList.get(i);
-	DeliveryOrder order = findOrderById(areaTask.orderId);
-	if (areaTask.startTime == null) {
-		areaTask.startTime = date();
-	}
-	if (!areaTask.equals(currentAreaTask)) {
-		areaTask.endTime = areaTask.startTime;
-	}
-	areaTask.state = 3;
-	areaTask.isGot = false;
-	order.areaTaskList.get(areaTask.index - 1).state = 3;
-	order.areaTaskList.get(areaTask.index - 1).isGot = false;
-	order.areaTaskList.get(areaTask.index + 1).state = 3;
-	order.areaTaskList.get(areaTask.index + 1).isGot = true;
-	order.areaTaskList.get(areaTask.index + 2).state = 0;
-	order.areaTaskList.get(areaTask.index + 2).isGot = true;
-	if (order.areaTaskList.get(areaTask.index + 1).truckId == -1) {
-		order.areaTaskList.get(areaTask.index + 1).truckId = exchangeTruck.id;
-		order.areaTaskList.get(areaTask.index + 2).truckId = exchangeTruck.id;
-		send(order, exchangeTruck);
-	}
-}
-startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAction>
+	startLonLat = new double[]{this.getLongitude(), this.getLatitude()};
+} else {
+	// System.out.println("==========work_1异常 START==========");
+	// System.out.println("truckId:" + this.id);
+	// System.out.println("currentAreaTask.index:" + currentAreaTask.index);
+	// System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
+	// System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
+	// System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
+	// System.out.println("currentAreaTask.type:" + currentAreaTask.type);
+	// System.out.println("currentAreaTask.state:" + currentAreaTask.state);
+	// System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index - 1).index:" + currentOrder.areaTaskList.get(currentAreaTask.index - 1).index);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index - 1).orderId:" + currentOrder.areaTaskList.get(currentAreaTask.index - 1).orderId);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index - 1).areaId:" + currentOrder.areaTaskList.get(currentAreaTask.index - 1).areaId);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index - 1).truckId:" + currentOrder.areaTaskList.get(currentAreaTask.index - 1).truckId);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index - 1).type:" + currentOrder.areaTaskList.get(currentAreaTask.index - 1).type);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index - 1).state:" + currentOrder.areaTaskList.get(currentAreaTask.index - 1).state);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index - 1).isGot:" + currentOrder.areaTaskList.get(currentAreaTask.index - 1).isGot);
+	// System.out.println("==========work_1异常 END==========");
+}]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -5939,7 +6616,8 @@ type3TaskList.removeAll(removeType3TaskList);
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentAreaTask.state = 2;]]></EntryAction>
+						<EntryAction><![CDATA[currentAreaTask.state = 2;
+checkWaitTime = 0;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -5952,83 +6630,72 @@ type3TaskList.removeAll(removeType3TaskList);
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentAreaTask.endTime = date();
-int length = 0;
-for (DeliveryOrder order : deliveryOrderList) {
-	if (order.state != 3) {
-		length++;
+						<EntryAction><![CDATA[if (currentAreaTask.state != 3) {
+	currentAreaTask.endTime = date();
+	int length = 0;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (order.state != 3) {
+			length++;
+		}
 	}
-}
-double distance = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
-double time = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
-this.totalDistance += distance;
-this.totalWorkTime += time;
-double cost = (distance / 1000.0 * main.distanceEnergyConsumption) / length + time * (main.laborRate + main.depreciationRate) / length;
-currentOrder.totalDistance += distance;
-currentOrder.totalCost += cost;
-Set<Integer> orderIdSet = new HashSet<>();
-for (AreaTask areaTask : type0TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	double distance = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
+	double time = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
+	this.totalDistance += distance;
+	this.totalWorkTime += time;
+	double cost = (distance / 1000.0 * main.distanceEnergyConsumption) / length + time * (main.laborRate + main.depreciationRate) / length;
+	currentOrder.totalDistance += distance;
+	currentOrder.totalCost += cost;
+	Set<Integer> orderIdSet = new HashSet<>();
+	for (AreaTask areaTask : type0TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type1TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type1TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type2TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type2TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type3TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type3TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (DeliveryOrder order : deliveryOrderList) {
-	if (!order.equals(currentOrder) && order.state != 3) {
-		order.totalCost += cost;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (!order.equals(currentOrder) && order.state != 3) {
+			order.totalCost += cost;
+		}
 	}
-}
-for (DeliveryOrder order : deliveryOrderList) {
-	if (!order.equals(currentOrder) && order.state != 3 && orderIdSet.contains(order.id)) {
-		order.totalDistance += distance;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (!order.equals(currentOrder) && order.state != 3 && orderIdSet.contains(order.id)) {
+			order.totalDistance += distance;
+		}
 	}
 }]]></EntryAction>
-						<ExitAction><![CDATA[for (AreaTask areaTask : type0TaskList) {
-	if (areaTask.supermarketId == currentAreaTask.supermarketId && areaTask.isGot == false) {
-		areaTask.state = 3;
-		areaTask.isGot = true;
-		if (areaTask.startTime == null) {
-			areaTask.startTime = date();
+						<ExitAction><![CDATA[if (currentAreaTask.state != 3) {
+	for (AreaTask areaTask : type0TaskList) {
+		if (areaTask.supermarketId == currentAreaTask.supermarketId && areaTask.isGot == false) {
+			areaTask.state = 3;
+			areaTask.isGot = true;
+			if (areaTask.startTime == null) {
+				areaTask.startTime = date();
+			}
+			if (areaTask.endTime == null) {
+				areaTask.endTime = date();
+			}
+			DeliveryOrder order = findOrderById(areaTask.orderId);
+			order.state = 2;
+			order.areaTaskList.get(1).state = 0;
+			order.areaTaskList.get(1).isGot = true;
 		}
-		if (!areaTask.equals(currentAreaTask)) {
-			areaTask.endTime = areaTask.startTime;
-		}
-
-		DeliveryOrder order = findOrderById(areaTask.orderId);
-		// if (order == null) {
-		// System.out.println("==========异常START==========");
-		// System.out.println("truckId:" + this.id);
-		// System.out.println("areaTask.index:" + areaTask.index);
-		// System.out.println("areaTask.orderId:" + areaTask.orderId);
-		// System.out.println("areaTask.areaId:" + areaTask.areaId);
-		// System.out.println("areaTask.truckId:" + areaTask.truckId);
-		// System.out.println("areaTask.type:" + areaTask.type);
-		// System.out.println("areaTask.state:" + areaTask.state);
-		// System.out.println("areaTask.isGot:" + areaTask.isGot);
-		// DeliveryOrder order2 = main.deliveryOrderList.get(areaTask.orderId);
-		// System.out.println("order2.state:" + order2.state);
-		// System.out.println("==========异常END==========");
-		// }
-		order.state = 2;
-		order.areaTaskList.get(1).state = 0;
-		order.areaTaskList.get(1).isGot = true;
 	}
-}
-startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAction>
+	startLonLat = new double[]{this.getLongitude(), this.getLatitude()};
+}]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -6082,7 +6749,7 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 // System.out.println("task.isGot:" + task.endTime);
 // System.out.println("task.isGot:" + task.distance);
 // }
-System.out.println("==========异常START==========");
+System.out.println("==========异常状态 START==========");
 System.out.println("truckId:" + this.id);
 System.out.println("currentAreaTask.index:" + currentAreaTask.index);
 System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
@@ -6109,7 +6776,7 @@ for (AreaTask areaTask : order.areaTaskList) {
 }
 System.out.println("==========areaTaskList END==========");
 
-System.out.println("==========异常END==========");]]></EntryAction>
+System.out.println("==========异常状态 END==========");]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -6135,7 +6802,8 @@ System.out.println("==========异常END==========");]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentAreaTask.state = 2;]]></EntryAction>
+						<EntryAction><![CDATA[currentAreaTask.state = 2;
+checkWaitTime = 0;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -6148,77 +6816,75 @@ System.out.println("==========异常END==========");]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentAreaTask.endTime = date();
-int length = 0;
-for (DeliveryOrder order : deliveryOrderList) {
-	if (order.state != 3) {
-		length++;
+						<EntryAction><![CDATA[if (currentAreaTask.state != 3) {
+	currentAreaTask.endTime = date();
+	int length = 0;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (order.state != 3) {
+			length++;
+		}
 	}
-}
-double distance = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
-double time = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
-this.totalDistance += distance;
-this.totalWorkTime += time;
-double cost = (distance / 1000.0 * main.distanceEnergyConsumption) / length + time * (main.laborRate + main.depreciationRate) / length;
-currentOrder.totalDistance += distance;
-currentOrder.totalCost += cost;
-Set<Integer> orderIdSet = new HashSet<>();
-for (AreaTask areaTask : type0TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	double distance = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
+	double time = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
+	this.totalDistance += distance;
+	this.totalWorkTime += time;
+	double cost = (distance / 1000.0 * main.distanceEnergyConsumption) / length + time * (main.laborRate + main.depreciationRate) / length;
+	currentOrder.totalDistance += distance;
+	currentOrder.totalCost += cost;
+	Set<Integer> orderIdSet = new HashSet<>();
+	for (AreaTask areaTask : type0TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type1TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type1TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type2TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type2TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type3TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type3TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (DeliveryOrder order : deliveryOrderList) {
-	if (!order.equals(currentOrder) && order.state != 3) {
-		order.totalCost += cost;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (!order.equals(currentOrder) && order.state != 3) {
+			order.totalCost += cost;
+		}
 	}
-}
-for (DeliveryOrder order : deliveryOrderList) {
-	if (!order.equals(currentOrder) && order.state != 3 && orderIdSet.contains(order.id)) {
-		order.totalDistance += distance;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (!order.equals(currentOrder) && order.state != 3 && orderIdSet.contains(order.id)) {
+			order.totalDistance += distance;
+		}
 	}
 }]]></EntryAction>
-						<ExitAction><![CDATA[for (AreaTask areaTask : type3TaskList) {
-	if (areaTask.customerId == currentAreaTask.customerId && areaTask.isGot == true) {
-		areaTask.state = 3;
-		areaTask.isGot = false;
-		if (areaTask.startTime == null) {
-			areaTask.startTime = date();
+						<ExitAction><![CDATA[if (currentAreaTask.state != 3) {
+	for (AreaTask areaTask : type3TaskList) {
+		if (areaTask.customerId == currentAreaTask.customerId && areaTask.isGot == true) {
+			areaTask.state = 3;
+			areaTask.isGot = false;
+			if (areaTask.startTime == null) {
+				areaTask.startTime = date();
+			}
+			if (areaTask.endTime == null) {
+				areaTask.endTime = date();
+			}
+			DeliveryOrder order = findOrderById(areaTask.orderId);
+			order.state = 3;
+			order.completionTime = areaTask.endTime;
+			order.areaTaskList.get(areaTask.index - 1).state = 3;
+			order.areaTaskList.get(areaTask.index - 1).isGot = false;
+			this.usedPosition--;
 		}
-		if (!areaTask.equals(currentAreaTask)) {
-			areaTask.endTime = areaTask.startTime;
-		}
-		DeliveryOrder order = findOrderById(areaTask.orderId);
-		order.state = 3;
-		order.completionTime = areaTask.endTime;
-		order.areaTaskList.get(areaTask.index - 1).state = 3;
-		order.areaTaskList.get(areaTask.index - 1).isGot = false;
-		this.usedPosition--;
-		// System.out.println("==========type3START==========");
-		// System.out.println("truckId:"+this.id);
-		// System.out.println("areaTask.orderId:" + currentAreaTask.orderId);
-		// System.out.println("areaTask.type:" + currentAreaTask.type);
-		// System.out.println("areaTask.state:" + currentAreaTask.state);
-		// System.out.println("areaTask.isGot:" + currentAreaTask.isGot);
-		// System.out.println("==========type3END==========");
 	}
+	startLonLat = new double[]{this.getLongitude(), this.getLatitude()};
 }
-startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAction>
+]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -6244,7 +6910,8 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentAreaTask.state = 2;]]></EntryAction>
+						<EntryAction><![CDATA[currentAreaTask.state = 2;
+checkWaitTime = 0;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -6257,142 +6924,188 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[currentAreaTask.endTime = date();
-int length = 0;
-for (DeliveryOrder order : deliveryOrderList) {
-	if (order.state != 3) {
-		length++;
+						<EntryAction><![CDATA[if (currentAreaTask.state != 3) {
+	currentAreaTask.endTime = date();
+	int length = 0;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (order.state != 3) {
+			length++;
+		}
 	}
-}
-double distance = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
-double time = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
-this.totalDistance += distance;
-this.totalWorkTime += time;
-double cost = (distance / 1000.0 * main.distanceEnergyConsumption) / length + time * (main.laborRate + main.depreciationRate) / length;
-currentOrder.totalDistance += distance;
-currentOrder.totalCost += cost;
-Set<Integer> orderIdSet = new HashSet<>();
-for (AreaTask areaTask : type0TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	double distance = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
+	double time = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
+	this.totalDistance += distance;
+	this.totalWorkTime += time;
+	double cost = (distance / 1000.0 * main.distanceEnergyConsumption) / length + time * (main.laborRate + main.depreciationRate) / length;
+	currentOrder.totalDistance += distance;
+	currentOrder.totalCost += cost;
+	Set<Integer> orderIdSet = new HashSet<>();
+	for (AreaTask areaTask : type0TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type1TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type1TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type2TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type2TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (AreaTask areaTask : type3TaskList) {
-	if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-		orderIdSet.add(areaTask.orderId);
+	for (AreaTask areaTask : type3TaskList) {
+		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet.add(areaTask.orderId);
+		}
 	}
-}
-for (DeliveryOrder order : deliveryOrderList) {
-	if (!order.equals(currentOrder) && order.state != 3) {
-		order.totalCost += cost;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (!order.equals(currentOrder) && order.state != 3) {
+			order.totalCost += cost;
+		}
 	}
-}
-for (DeliveryOrder order : deliveryOrderList) {
-	if (!order.equals(currentOrder) && order.state != 3 && orderIdSet.contains(order.id)) {
-		order.totalDistance += distance;
+	for (DeliveryOrder order : deliveryOrderList) {
+		if (!order.equals(currentOrder) && order.state != 3 && orderIdSet.contains(order.id)) {
+			order.totalDistance += distance;
+		}
 	}
 }]]></EntryAction>
-						<ExitAction><![CDATA[Truck exchangeTruck = main.truck.get(currentOrder.areaTaskList.get(currentAreaTask.index + 1).truckId);
-ArrayList<AreaTask> areaTaskToDeliveryList = new ArrayList<AreaTask>();
-areaTaskToDeliveryList.add(currentAreaTask);
-for (AreaTask areaTask : type2TaskList) {
-	AreaTask afterAreaTask = findOrderById(areaTask.orderId).areaTaskList.get(areaTask.index + 1);
-	if (!areaTask.equals(currentAreaTask) && afterAreaTask.truckId == -1 && afterAreaTask.areaId == exchangeTruck.areaId) {
-		areaTaskToDeliveryList.add(areaTask);
-	} else if (!areaTask.equals(currentAreaTask) && afterAreaTask.truckId != -1 && afterAreaTask.truckId == exchangeTruck.id) {
-		areaTaskToDeliveryList.add(areaTask);
+						<ExitAction><![CDATA[if (currentAreaTask.state != 3) {
+	// if ((currentAreaTask.state == 2 && currentAreaTask.isGot == true) && (currentOrder.areaTaskList.get(currentAreaTask.index + 1).state == 2 && currentOrder.areaTaskList.get(currentAreaTask.index + 1).isGot == false)) {
+	Truck exchangeTruck = main.trucks.get(currentOrder.areaTaskList.get(currentAreaTask.index + 1).truckId);
+	ArrayList<AreaTask> areaTaskToDeliveryList = new ArrayList<AreaTask>();
+	areaTaskToDeliveryList.add(currentAreaTask);
+	for (AreaTask areaTask : type2TaskList) {
+		AreaTask afterAreaTask = findOrderById(areaTask.orderId).areaTaskList.get(areaTask.index + 1);
+		if (!areaTask.equals(currentAreaTask) && areaTask.state == 0 && areaTask.isGot == true && afterAreaTask.state == 0 && afterAreaTask.isGot == false && (afterAreaTask.truckId == -1 && afterAreaTask.areaId == exchangeTruck.areaId) || (afterAreaTask.truckId != -1 && afterAreaTask.truckId == exchangeTruck.id)) {
+			areaTaskToDeliveryList.add(areaTask);
+		}
 	}
-}
-ArrayList<AreaTask> areaTaskToReceiveList = new ArrayList<AreaTask>();
-for (AreaTask areaTask : type1TaskList) {
-	if (findOrderById(areaTask.orderId).areaTaskList.get(areaTask.index - 1).truckId == exchangeTruck.id) {
-		areaTaskToReceiveList.add(areaTask);
+	ArrayList<AreaTask> areaTaskToReceiveList = new ArrayList<AreaTask>();
+	for (AreaTask areaTask : type1TaskList) {
+		AreaTask beforeAreaTask = findOrderById(areaTask.orderId).areaTaskList.get(areaTask.index - 1);
+		if (areaTask.state == 0 && areaTask.isGot == false && beforeAreaTask.truckId == exchangeTruck.id && beforeAreaTask.state == 0 && beforeAreaTask.isGot == true) {
+			areaTaskToReceiveList.add(areaTask);
+		}
 	}
-}
-int areaTaskToReceiveNum = areaTaskToReceiveList.size();
-int areaTaskToDeliveryNum = areaTaskToDeliveryList.size();
-int areaTaskToReceiveExecutionNum = 0;
-int areaTaskToDeliveryExecutionNum = 0;
-if (areaTaskToReceiveNum - areaTaskToDeliveryNum > 0) {
-	if (this.totalPosition - this.usedPosition >= areaTaskToReceiveNum - areaTaskToDeliveryNum) {
+	int areaTaskToReceiveNum = areaTaskToReceiveList.size();
+	int areaTaskToDeliveryNum = areaTaskToDeliveryList.size();
+	int areaTaskToReceiveExecutionNum = 0;
+	int areaTaskToDeliveryExecutionNum = 0;
+	if (areaTaskToReceiveNum - areaTaskToDeliveryNum > 0) {
+		if (this.totalPosition - this.usedPosition >= areaTaskToReceiveNum - areaTaskToDeliveryNum) {
+			areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
+			areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
+			this.usedPosition = this.usedPosition + areaTaskToReceiveNum - areaTaskToDeliveryNum;
+			exchangeTruck.usedPosition = exchangeTruck.usedPosition + areaTaskToDeliveryNum - areaTaskToReceiveNum;
+		} else {
+			areaTaskToReceiveExecutionNum = areaTaskToDeliveryNum + this.totalPosition - this.usedPosition;
+			areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
+			this.usedPosition = this.totalPosition;
+			exchangeTruck.usedPosition = exchangeTruck.usedPosition - this.totalPosition + this.usedPosition;
+		}
+	} else if (areaTaskToReceiveNum - areaTaskToDeliveryNum == 0) {
 		areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
 		areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
-		this.usedPosition = this.usedPosition + areaTaskToReceiveNum - areaTaskToDeliveryNum;
-		exchangeTruck.usedPosition = exchangeTruck.usedPosition + areaTaskToDeliveryNum - areaTaskToReceiveNum;
-	} else {
-		areaTaskToReceiveExecutionNum = areaTaskToDeliveryNum + this.totalPosition - this.usedPosition;
-		areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
-		this.usedPosition = this.totalPosition;
-		exchangeTruck.usedPosition = exchangeTruck.usedPosition - this.totalPosition + this.usedPosition;
+	} else if (areaTaskToReceiveNum - areaTaskToDeliveryNum < 0) {
+		if (exchangeTruck.totalPosition - exchangeTruck.usedPosition >= areaTaskToDeliveryNum - areaTaskToReceiveNum) {
+			areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
+			areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
+			this.usedPosition = this.usedPosition + areaTaskToReceiveNum - areaTaskToDeliveryNum;
+			exchangeTruck.usedPosition = exchangeTruck.usedPosition + areaTaskToDeliveryNum - areaTaskToReceiveNum;
+		} else {
+			areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
+			areaTaskToDeliveryExecutionNum = areaTaskToReceiveNum + exchangeTruck.totalPosition - exchangeTruck.usedPosition;
+			this.usedPosition = this.usedPosition - exchangeTruck.totalPosition + exchangeTruck.usedPosition;
+			exchangeTruck.usedPosition = exchangeTruck.totalPosition;
+		}
 	}
-} else if (areaTaskToReceiveNum - areaTaskToDeliveryNum == 0) {
-	areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
-	areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
-} else if (areaTaskToReceiveNum - areaTaskToDeliveryNum < 0) {
-	if (exchangeTruck.totalPosition - exchangeTruck.usedPosition >= areaTaskToDeliveryNum - areaTaskToReceiveNum) {
-		areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
-		areaTaskToDeliveryExecutionNum = areaTaskToDeliveryNum;
-		this.usedPosition = this.usedPosition + areaTaskToReceiveNum - areaTaskToDeliveryNum;
-		exchangeTruck.usedPosition = exchangeTruck.usedPosition + areaTaskToDeliveryNum - areaTaskToReceiveNum;
-	} else {
-		areaTaskToReceiveExecutionNum = areaTaskToReceiveNum;
-		areaTaskToDeliveryExecutionNum = areaTaskToReceiveNum + exchangeTruck.totalPosition - exchangeTruck.usedPosition;
-		this.usedPosition = this.usedPosition - exchangeTruck.totalPosition + exchangeTruck.usedPosition;
-		exchangeTruck.usedPosition = exchangeTruck.totalPosition;
+	for (int i = 0; i < areaTaskToReceiveExecutionNum; i++) {
+		AreaTask areaTask = areaTaskToReceiveList.get(i);
+		DeliveryOrder order = findOrderById(areaTask.orderId);
+		if (areaTask.startTime == null) {
+			areaTask.startTime = date();
+		}
+		if (areaTask.endTime == null) {
+			areaTask.endTime = date();
+		}
+		areaTask.state = 3;
+		areaTask.isGot = true;
+		order.areaTaskList.get(areaTask.index + 1).state = 0;
+		order.areaTaskList.get(areaTask.index + 1).isGot = true;
+		order.areaTaskList.get(areaTask.index - 1).state = 3;
+		order.areaTaskList.get(areaTask.index - 1).isGot = false;
+		if (order.areaTaskList.get(areaTask.index - 1).startTime == null) {
+			order.areaTaskList.get(areaTask.index - 1).startTime = date();
+		}
+		if (order.areaTaskList.get(areaTask.index - 1).endTime == null) {
+			order.areaTaskList.get(areaTask.index - 1).endTime = date();
+		}
+		order.areaTaskList.get(areaTask.index - 2).state = 3;
+		order.areaTaskList.get(areaTask.index - 2).isGot = false;
+		if (order.areaTaskList.get(areaTask.index - 2).startTime == null) {
+			order.areaTaskList.get(areaTask.index - 2).startTime = date();
+		}
+		if (order.areaTaskList.get(areaTask.index - 2).endTime == null) {
+			order.areaTaskList.get(areaTask.index - 2).endTime = date();
+		}
 	}
-}
-for (int i = 0; i < areaTaskToReceiveExecutionNum; i++) {
-	AreaTask areaTask = areaTaskToReceiveList.get(i);
-	DeliveryOrder order = findOrderById(areaTask.orderId);
-	if (areaTask.startTime == null) {
-		areaTask.startTime = date();
+	for (int i = 0; i < areaTaskToDeliveryExecutionNum; i++) {
+		AreaTask areaTask = areaTaskToDeliveryList.get(i);
+		DeliveryOrder order = findOrderById(areaTask.orderId);
+		if (areaTask.startTime == null) {
+			areaTask.startTime = date();
+		}
+		if (areaTask.endTime == null) {
+			areaTask.endTime = date();
+		}
+		areaTask.state = 3;
+		areaTask.isGot = false;
+		order.areaTaskList.get(areaTask.index - 1).state = 3;
+		order.areaTaskList.get(areaTask.index - 1).isGot = false;
+		if (order.areaTaskList.get(areaTask.index - 1).startTime == null) {
+			order.areaTaskList.get(areaTask.index - 1).startTime = date();
+		}
+		if (order.areaTaskList.get(areaTask.index - 1).endTime == null) {
+			order.areaTaskList.get(areaTask.index - 1).endTime = date();
+		}
+		order.areaTaskList.get(areaTask.index + 1).state = 3;
+		order.areaTaskList.get(areaTask.index + 1).isGot = true;
+		if (order.areaTaskList.get(areaTask.index + 1).startTime == null) {
+			order.areaTaskList.get(areaTask.index + 1).startTime = date();
+		}
+		if (order.areaTaskList.get(areaTask.index + 1).endTime == null) {
+			order.areaTaskList.get(areaTask.index + 1).endTime = date();
+		}
+		order.areaTaskList.get(areaTask.index + 2).state = 0;
+		order.areaTaskList.get(areaTask.index + 2).isGot = true;
+		if (order.areaTaskList.get(areaTask.index + 1).truckId == -1) {
+			order.areaTaskList.get(areaTask.index + 1).truckId = exchangeTruck.id;
+			order.areaTaskList.get(areaTask.index + 2).truckId = exchangeTruck.id;
+			send(order, exchangeTruck);
+		}
 	}
-	if (!areaTask.equals(currentAreaTask)) {
-		areaTask.endTime = areaTask.startTime;
-	}
-	areaTask.state = 3;
-	areaTask.isGot = true;
-	order.areaTaskList.get(areaTask.index + 1).state = 0;
-	order.areaTaskList.get(areaTask.index + 1).isGot = true;
-	order.areaTaskList.get(areaTask.index - 1).state = 3;
-	order.areaTaskList.get(areaTask.index - 1).isGot = false;
-	order.areaTaskList.get(areaTask.index - 2).state = 3;
-	order.areaTaskList.get(areaTask.index - 2).isGot = false;
-}
-for (int i = 0; i < areaTaskToDeliveryExecutionNum; i++) {
-	AreaTask areaTask = areaTaskToDeliveryList.get(i);
-	DeliveryOrder order = findOrderById(areaTask.orderId);
-	if (areaTask.startTime == null) {
-		areaTask.startTime = date();
-	}
-	if (!areaTask.equals(currentAreaTask)) {
-		areaTask.endTime = areaTask.startTime;
-	}
-	areaTask.state = 3;
-	areaTask.isGot = false;
-	order.areaTaskList.get(areaTask.index - 1).state = 3;
-	order.areaTaskList.get(areaTask.index - 1).isGot = false;
-	order.areaTaskList.get(areaTask.index + 1).state = 3;
-	order.areaTaskList.get(areaTask.index + 1).isGot = true;
-	order.areaTaskList.get(areaTask.index + 2).state = 0;
-	order.areaTaskList.get(areaTask.index + 2).isGot = true;
-	if (order.areaTaskList.get(areaTask.index + 1).truckId == -1) {
-		order.areaTaskList.get(areaTask.index + 1).truckId = exchangeTruck.id;
-		order.areaTaskList.get(areaTask.index + 2).truckId = exchangeTruck.id;
-		send(order, exchangeTruck);
-	}
-}
-startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAction>
+	startLonLat = new double[]{this.getLongitude(), this.getLatitude()};
+} else {
+	// System.out.println("==========work_2异常 START==========");
+	// System.out.println("truckId:" + this.id);
+	// System.out.println("currentAreaTask.index:" + currentAreaTask.index);
+	// System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
+	// System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
+	// System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
+	// System.out.println("currentAreaTask.type:" + currentAreaTask.type);
+	// System.out.println("currentAreaTask.state:" + currentAreaTask.state);
+	// System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index + 1).index:" + currentOrder.areaTaskList.get(currentAreaTask.index + 1).index);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index + 1).orderId:" + currentOrder.areaTaskList.get(currentAreaTask.index + 1).orderId);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index + 1).areaId:" + currentOrder.areaTaskList.get(currentAreaTask.index + 1).areaId);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index + 1).truckId:" + currentOrder.areaTaskList.get(currentAreaTask.index + 1).truckId);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index + 1).type:" + currentOrder.areaTaskList.get(currentAreaTask.index + 1).type);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index + 1).state:" + currentOrder.areaTaskList.get(currentAreaTask.index + 1).state);
+	// System.out.println("currentOrder.areaTaskList.get(currentAreaTask.index + 1).isGot:" + currentOrder.areaTaskList.get(currentAreaTask.index + 1).isGot);
+	// System.out.println("==========work_2异常 END==========");
+}]]></ExitAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -6409,6 +7122,7 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 						<Point><X>0</X><Y>40</Y></Point>
 					</Points>
 					<Properties Target="1690443695227">
+						<Action><![CDATA[currentArea = main.area.get(this.areaId);]]></Action>
 					</Properties>	
 				</StatechartElement>
 				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
@@ -6581,6 +7295,7 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1690443695235" Target="1690443695235" Trigger="timeout">
+						<Action><![CDATA[checkWaitTime++;]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -6706,6 +7421,7 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1690443695241" Target="1690443695227" Trigger="timeout">
+						<Action><![CDATA[// moveTo(currentArea.latitude,currentArea.longitude);]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -6798,6 +7514,37 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1690443695245" Target="1690443695245" Trigger="timeout">
+						<Action><![CDATA[if (checkWaitTime >= 100) {
+	System.out.println("==========异常START==========");
+	System.out.println("truckId:" + this.id);
+	System.out.println("currentAreaTask.index:" + currentAreaTask.index);
+	System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
+	System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
+	System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
+	System.out.println("currentAreaTask.type:" + currentAreaTask.type);
+	System.out.println("currentAreaTask.state:" + currentAreaTask.state);
+	System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
+	System.out.println("==========Order START==========");
+	DeliveryOrder order = findOrderById(currentAreaTask.orderId);
+	System.out.println("order.id:" + order.id);
+	System.out.println("order.state:" + order.state);
+	System.out.println("==========Order END==========");
+	System.out.println("==========areaTaskList START==========");
+
+	for (AreaTask areaTask : order.areaTaskList) {
+		System.out.println("areaTask.index:" + areaTask.index);
+		System.out.println("areaTask.orderId:" + areaTask.orderId);
+		System.out.println("areaTask.areaId:" + areaTask.areaId);
+		System.out.println("areaTask.truckId:" + areaTask.truckId);
+		System.out.println("areaTask.type:" + areaTask.type);
+		System.out.println("areaTask.state:" + areaTask.state);
+		System.out.println("areaTask.isGot:" + areaTask.isGot);
+	}
+	System.out.println("==========areaTaskList END==========");
+
+	System.out.println("==========异常END==========");
+}
+checkWaitTime++;]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -6921,7 +7668,7 @@ startLonLat = new double[]{this.getLongitude(), this.getLatitude()};]]></ExitAct
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1690443695231" Target="1690444625907" Trigger="timeout">
-						<Action><![CDATA[send(currentOrder, currentOrder.areaList.get(currentOrder.areaList.indexOf(currentArea) + 1));
+						<Action><![CDATA[send(currentOrder, main.area.get(currentOrder.areaTaskList.get(currentAreaTask.index + 1).areaId));
 moveTo(currentAreaTask.endLatitude, currentAreaTask.endLongitude);]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
@@ -6983,6 +7730,37 @@ moveTo(currentAreaTask.endLatitude, currentAreaTask.endLongitude);]]></Action>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1690444603063" Target="1690444603063" Trigger="timeout">
+						<Action><![CDATA[if (checkWaitTime >= 100) {
+	System.out.println("==========异常START==========");
+	System.out.println("truckId:" + this.id);
+	System.out.println("currentAreaTask.index:" + currentAreaTask.index);
+	System.out.println("currentAreaTask.orderId:" + currentAreaTask.orderId);
+	System.out.println("currentAreaTask.areaId:" + currentAreaTask.areaId);
+	System.out.println("currentAreaTask.truckId:" + currentAreaTask.truckId);
+	System.out.println("currentAreaTask.type:" + currentAreaTask.type);
+	System.out.println("currentAreaTask.state:" + currentAreaTask.state);
+	System.out.println("currentAreaTask.isGot:" + currentAreaTask.isGot);
+	System.out.println("==========Order START==========");
+	DeliveryOrder order = findOrderById(currentAreaTask.orderId);
+	System.out.println("order.id:" + order.id);
+	System.out.println("order.state:" + order.state);
+	System.out.println("==========Order END==========");
+	System.out.println("==========areaTaskList START==========");
+
+	for (AreaTask areaTask : order.areaTaskList) {
+		System.out.println("areaTask.index:" + areaTask.index);
+		System.out.println("areaTask.orderId:" + areaTask.orderId);
+		System.out.println("areaTask.areaId:" + areaTask.areaId);
+		System.out.println("areaTask.truckId:" + areaTask.truckId);
+		System.out.println("areaTask.type:" + areaTask.type);
+		System.out.println("areaTask.state:" + areaTask.state);
+		System.out.println("areaTask.isGot:" + areaTask.isGot);
+	}
+	System.out.println("==========areaTaskList END==========");
+
+	System.out.println("==========异常END==========");
+}
+checkWaitTime++;]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -7073,6 +7851,7 @@ moveTo(currentAreaTask.endLatitude, currentAreaTask.endLongitude);]]></Action>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1690444625909" Target="1690444625909" Trigger="timeout">
+						<Action><![CDATA[checkWaitTime++;]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -7240,6 +8019,80 @@ moveTo(currentAreaTask.endLatitude, currentAreaTask.endLongitude);]]></Action>
 						</Rate>
 						<MessageType><![CDATA[Object]]></MessageType>
 						<DefaultTransition>false</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1692088290440</Id>
+					<Name><![CDATA[transition1]]></Name>
+					<X>420</X><Y>720</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>-60</Y></Point>
+						<Point><X>30</X><Y>-200</Y></Point>
+						<Point><X>150</X><Y>-200</Y></Point>
+					</Points>
+					<IconOffset>180.0</IconOffset>
+					<Properties Source="1690444625909" Target="1690443695229" Trigger="condition">
+						<Action><![CDATA[currentAreaTask.state = 0;
+type2TaskList.remove(currentAreaTask);
+type2TaskList.add(1, currentAreaTask);
+System.out.println("==========type2 异常处理==========");]]></Action>
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[checkWaitTime >= 1440]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1692088573711</Id>
+					<Name><![CDATA[transition2]]></Name>
+					<X>270</X><Y>720</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>-50</Y></Point>
+						<Point><X>30</X><Y>-210</Y></Point>
+						<Point><X>300</X><Y>-210</Y></Point>
+					</Points>
+					<IconOffset>180.0</IconOffset>
+					<Properties Source="1690443695235" Target="1690443695229" Trigger="condition">
+						<Action><![CDATA[currentAreaTask.state = 0;
+type1TaskList.remove(currentAreaTask);
+type1TaskList.add(1, currentAreaTask);
+System.out.println("==========type1 异常处理==========");]]></Action>
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[checkWaitTime >= 1440]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
 						<FilterType><![CDATA[unconditionally]]></FilterType>
 						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
 						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
@@ -7657,6 +8510,28 @@ deliveryOrderList.add(msg);]]></OnReceive>
 			</Presentation>
 
 				</Group>
+				<Text>
+					<Id>1692348720892</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>-10</X><Y>-10</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744448</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[id]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
@@ -8513,7 +9388,7 @@ deliveryOrderList.add(msg);]]></OnReceive>
 			if (order.areaTaskList.get(i).areaId == this.id) {
 				AreaTask task1 = order.areaTaskList.get(i);
 				AreaTask task2 = order.areaTaskList.get(i + 1);
-				int maxPosition = -1;
+				int maxPosition = 0;
 				int truckId = -1;
 				for (Truck truck : this.truckList) {
 					if (truck.totalPosition - truck.usedPosition > maxPosition) {
@@ -8521,16 +9396,24 @@ deliveryOrderList.add(msg);]]></OnReceive>
 						truckId = truck.id;
 					}
 				}
-				if (maxPosition > 0 && truckId != -1) {
-					task1.truckId = truckId;
-					task2.truckId = truckId;
-					Truck truck = main.truck.get(truckId);
-					truck.usedPosition++;
-					removeAllList.add(order);
-					if (order.state == 0) {
-						order.state = 1;
+				if (truckId != -1) {
+					Truck truck = main.trucks.get(truckId);
+					if (truck.totalPosition - truck.usedPosition > 0) {
+						task1.truckId = truckId;
+						task2.truckId = truckId;
+						if (task1.index == 0) {
+							// System.out.println("truck.id: "+truck.id);
+							// System.out.println("truck.areaId: "+truck.areaId);
+							truck.usedPosition++;
+							// System.out.println("truck.usedPosition: "+truck.usedPosition);
+							// System.out.println("order.id: "+ order.id);
+						}
+						removeAllList.add(order);
+						if (order.state == 0) {
+							order.state = 1;
+						}
+						send(order, truck);
 					}
-					send(order, truck);
 				}
 				break;
 			}
@@ -8646,6 +9529,30 @@ pendingOrderList.add(msg);
 					<Z>0</Z>
 					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
 
+			<Presentation>
+				<Text>
+					<Id>1692155087606</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>-10</X><Y>-10</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-65536</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[this.id]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>16</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
 
 				</Level>
 			</Presentation>
