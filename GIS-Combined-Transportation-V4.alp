@@ -180,7 +180,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;]]></Import>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[16000.00]]></Code>
+							<Code><![CDATA[27000.00]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -1823,12 +1823,20 @@ for (Truck t : trucks) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[int nullAreaNum = 0;
+double nullAreaProbability = 0;
+ArrayList<Customer> nullAreaCustomerList = new ArrayList<Customer>();
 int nullPathNum = 0;
-double totalProbability = 0;
+double nullPathProbability = 0;
+ArrayList<Customer> nullPathCustomerList = new ArrayList<Customer>();
+int oneNodeNum = 0;
+double oneNodeProbability = 0;
+ArrayList<Customer> oneNodeCustomerList = new ArrayList<Customer>();
+int oneNodeArea27Num = 0;
+double oneNodeArea27Probability = 0;
+ArrayList<Customer> oneNodeArea27CustomerList = new ArrayList<Customer>();
 int maxPathNum = 0;
 int maxPathNumCustomerId = -1;
-ArrayList<Customer> nullAreaCustomerList = new ArrayList<Customer>();
-ArrayList<Customer> nullPathCustomerList = new ArrayList<Customer>();
+
 for (Customer cus : customer) {
 	// System.out.println("========== customer " + cus.id + " ==========");
 	// 转换到新坐标系
@@ -1862,42 +1870,69 @@ for (Customer cus : customer) {
 		areaIndexList[i] = (int) areaPointList.get(i)[0];
 	}
 	areaNodeList.add(new AreaNodE(-2.0, customer_new_coordinate[0], customer_new_coordinate[1], -2.0, 0.0, Double.MAX_VALUE));
+	// System.out.println("==========" + cus.id + "START==========");
+	// for (AreaNodE areaNode : areaNodeList) {
+	// System.out.println("areaNode: " + areaNode.id);
+	// }
+	// System.out.println("==========END==========");
 	if (areaNodeList.size() == 2) {
 		nullAreaNum++;
-		totalProbability += cus.probability;
+		nullAreaProbability += cus.probability;
 		nullAreaCustomerList.add(cus);
-		// System.out.println("cus.id: " + cus.id);
-		// System.out.println("cus.probability: " + cus.probability);
 	}
 	ArrayList<AreaNodE> bestAreaPointList = findOptimalPathDijkstra(areaNodeList);
-	if (areaNodeList.size() != 2 && bestAreaPointList.size() == areaNodeList.size()) {
+	if (areaNodeList.size() > 3 && bestAreaPointList.size() == areaNodeList.size()) {
 		nullPathNum++;
+		nullPathProbability += cus.probability;
 		nullPathCustomerList.add(cus);
-		// if (maxPathNum < bestAreaPointList.size()) {
-		// maxPathNum = bestAreaPointList.size();
-		// maxPathNumCustomerId = cus.id;
+	} else if (areaNodeList.size() == 3 || bestAreaPointList.size() == 3) {
+		oneNodeNum++;
+		oneNodeProbability += cus.probability;
+		oneNodeCustomerList.add(cus);
+		if (areaNodeList.get(1).id == 27 || bestAreaPointList.get(1).id == 27) {
+			oneNodeArea27Num++;
+			oneNodeArea27Probability += cus.probability;
+			oneNodeArea27CustomerList.add(cus);
+		}
+		// System.out.println("==========" + cus.id + "START==========");
+		// for (AreaNodE areaNode : bestAreaPointList) {
+		// System.out.println("areaNode: " + areaNode.id);
 		// }
+		// System.out.println("==========END==========");
 	}
 	if (maxPathNum < bestAreaPointList.size()) {
 		maxPathNum = bestAreaPointList.size();
 		maxPathNumCustomerId = cus.id;
 	}
-	// System.out.println("==========END==========");
 }
 System.out.println("customer总量: " + customer.size());
 System.out.println("矩形范围内找不到车的customer的数量: " + nullAreaNum);
-System.out.println("矩形范围内找不到车的customer占customer总量占比: " + (nullAreaNum * 100 / customer.size()) + "%");
-System.out.println("矩形范围内找不到车的customer的概率: " + (totalProbability) + "%");
-for (Customer cus : nullAreaCustomerList) {
+System.out.println("矩形范围内找不到车的customer占customer总量占比: " + (nullAreaNum * 100.00 / customer.size()) + "%");
+System.out.println("矩形范围内找不到车的customer的概率: " + (nullAreaProbability) + "%");
+// for (Customer cus : nullAreaCustomerList) {
+// System.out.println("customerId: " + cus.id);
+// }
+System.out.println("找不到路径的customer数量: " + nullPathNum);
+System.out.println("找不到路径的customer数量占customer总量占比: " + nullPathNum * 100.00 / customer.size() + "%");
+System.out.println("找不到路径的customer的概率: " + (nullPathProbability) + "%");
+// for (Customer cus : nullPathCustomerList) {
+// System.out.println("customerId: " + cus.id);
+// }
+System.out.println("只有一个节点的customer数量: " + oneNodeNum);
+System.out.println("只有一个节点的customer数量占customer总量占比: " + oneNodeNum * 100.00 / customer.size() + "%");
+System.out.println("只有一个节点的customer的概率: " + (oneNodeProbability) + "%");
+// for (Customer cus : oneNodeCustomerList) {
+// System.out.println("customerId: " + cus.id);
+// }
+System.out.println("只有一个节点且是27区的customer数量: " + oneNodeArea27Num);
+System.out.println("只有一个节点且是27区的customer数量占customer总量占比: " + oneNodeArea27Num * 100.00 / customer.size() + "%");
+System.out.println("只有一个节点且是27区的customer的概率: " + (oneNodeArea27Probability) + "%");
+for (Customer cus : oneNodeArea27CustomerList) {
 	System.out.println("customerId: " + cus.id);
 }
-System.out.println("找不到路径的customer数量: " + nullPathNum);
-System.out.println("找不到路径的customer数量占customer总量占比: " + nullPathNum * 100 / customer.size() + "%");
 System.out.println("最大路径节点数量: " + maxPathNum);
 System.out.println("最大路径节点数量对应的customerId: " + maxPathNumCustomerId);
-for (Customer cus : nullPathCustomerList) {
-	System.out.println("customerId: " + cus.id);
-}]]></Body>
+]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -6016,7 +6051,7 @@ currentAreaTask = null;]]></EntryAction>
 		}
 	}
 	currentStrategy = 0;
-} else if (usedPosition >= totalPosition * 1 / 3 && usedPosition <= totalPosition * 2 / 3) {
+} else if (usedPosition >= totalPosition * 1 / 3 && usedPosition < totalPosition * 2 / 3) {
 	if (currentStrategy == 0) {
 		// 0:订单取货;1:交接取货;2:交接送货;3:客户送货
 		if (type1TaskList.size() > 0) {
@@ -6058,10 +6093,7 @@ currentAreaTask = null;]]></EntryAction>
 		}
 	} else if (currentStrategy == 1) {
 		// 0:订单取货;1:交接取货;2:交接送货;3:客户送货
-		if (type1TaskList.size() > 0) {
-			currentAreaTask = type1TaskList.get(0);
-			currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
-		} else if (type2TaskList.size() > 0) {
+		if (type2TaskList.size() > 0) {
 			currentAreaTask = type2TaskList.get(0);
 			currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 			if (currentAreaTask.isGot == false) {
@@ -6091,17 +6123,17 @@ currentAreaTask = null;]]></EntryAction>
 			if (currentAreaTask.isGot == false) {
 				currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
 			}
+		} else if (type1TaskList.size() > 0) {
+			currentAreaTask = type1TaskList.get(0);
+			currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 		} else if (type0TaskList.size() > 0) {
 			currentAreaTask = type0TaskList.get(0);
 			currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 		}
 	}
-} else if (usedPosition > totalPosition * 2 / 3 && usedPosition <= totalPosition) {
+} else if (usedPosition >= totalPosition * 2 / 3 && usedPosition <= totalPosition) {
 	// 0:订单取货;1:交接取货;2:交接送货;3:客户送货
-	if (type1TaskList.size() > 0) {
-		currentAreaTask = type1TaskList.get(0);
-		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
-	} else if (type2TaskList.size() > 0) {
+	if (type2TaskList.size() > 0) {
 		currentAreaTask = type2TaskList.get(0);
 		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 		if (currentAreaTask.isGot == false) {
@@ -6131,6 +6163,9 @@ currentAreaTask = null;]]></EntryAction>
 		if (currentAreaTask.isGot == false) {
 			currentAreaTask = currentOrder.areaTaskList.get(currentAreaTask.index - 1);
 		}
+	} else if (type1TaskList.size() > 0) {
+		currentAreaTask = type1TaskList.get(0);
+		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
 	} else if (type0TaskList.size() > 0) {
 		currentAreaTask = type0TaskList.get(0);
 		currentOrder = main.deliveryOrderList.get(currentAreaTask.orderId);
@@ -6334,55 +6369,104 @@ checkWaitTime = 0;]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[if (currentAreaTask.state != 3) {
+						<EntryAction><![CDATA[if ((currentAreaTask.state == 2 && currentAreaTask.isGot == false) && (currentOrder.areaTaskList.get(currentAreaTask.index - 1).state == 2 && currentOrder.areaTaskList.get(currentAreaTask.index - 1).isGot == true)) {
+	// 当前车的成本计算
 	currentAreaTask.endTime = date();
-	int length = 0;
+	int length_current = 0;
 	for (DeliveryOrder order : deliveryOrderList) {
 		if (order.state != 3) {
-			length++;
+			length_current++;
 		}
 	}
-	double distance = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
-	double time = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
-	this.totalDistance += distance;
-	this.totalWorkTime += time;
-	double cost = (distance / 1000.0 * main.distanceEnergyConsumption) / length + time * (main.laborRate + main.depreciationRate) / length;
-	currentOrder.totalDistance += distance;
-	currentOrder.totalCost += cost;
-	Set<Integer> orderIdSet = new HashSet<>();
+	double distance_current = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
+	double time_current = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
+	this.totalDistance += distance_current;
+	this.totalWorkTime += time_current;
+	double cost_current = (distance_current / 1000.0 * main.distanceEnergyConsumption) / length_current + time_current * (main.laborRate + main.depreciationRate) / length_current;
+	currentOrder.totalDistance += distance_current;
+	currentOrder.totalCost += cost_current;
+	Set<Integer> orderIdSet_current = new HashSet<>();
 	for (AreaTask areaTask : type0TaskList) {
 		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-			orderIdSet.add(areaTask.orderId);
+			orderIdSet_current.add(areaTask.orderId);
 		}
 	}
 	for (AreaTask areaTask : type1TaskList) {
 		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-			orderIdSet.add(areaTask.orderId);
+			orderIdSet_current.add(areaTask.orderId);
 		}
 	}
 	for (AreaTask areaTask : type2TaskList) {
 		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-			orderIdSet.add(areaTask.orderId);
+			orderIdSet_current.add(areaTask.orderId);
 		}
 	}
 	for (AreaTask areaTask : type3TaskList) {
 		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-			orderIdSet.add(areaTask.orderId);
+			orderIdSet_current.add(areaTask.orderId);
 		}
 	}
 	for (DeliveryOrder order : deliveryOrderList) {
 		if (!order.equals(currentOrder) && order.state != 3) {
-			order.totalCost += cost;
+			order.totalCost += cost_current;
 		}
 	}
 	for (DeliveryOrder order : deliveryOrderList) {
-		if (!order.equals(currentOrder) && order.state != 3 && orderIdSet.contains(order.id)) {
-			order.totalDistance += distance;
+		if (!order.equals(currentOrder) && order.state != 3 && orderIdSet_current.contains(order.id)) {
+			order.totalDistance += distance_current;
+		}
+	}
+
+	// 上一辆车的成本计算
+	Truck beforeTruck = main.trucks.get(currentOrder.areaTaskList.get(currentAreaTask.index - 1).truckId);
+	beforeTruck.currentAreaTask.endTime = date();
+	int length_before = 0;
+	for (DeliveryOrder order : beforeTruck.deliveryOrderList) {
+		if (order.state != 3) {
+			length_before++;
+		}
+	}
+	double distance_before = main.map.getDistanceByRoute(beforeTruck.startLonLat[1], beforeTruck.startLonLat[0], beforeTruck.currentAreaTask.endLatitude, beforeTruck.currentAreaTask.endLongitude);
+	double time_before = dateToTime(beforeTruck.currentAreaTask.endTime) - dateToTime(beforeTruck.currentAreaTask.startTime);
+	beforeTruck.totalDistance += distance_before;
+	beforeTruck.totalWorkTime += time_before;
+	double cost_before = (distance_before / 1000.0 * main.distanceEnergyConsumption) / length_before + time_before * (main.laborRate + main.depreciationRate) / length_before;
+	beforeTruck.currentOrder.totalDistance += distance_before;
+	beforeTruck.currentOrder.totalCost += cost_before;
+	Set<Integer> orderIdSet_before = new HashSet<>();
+	for (AreaTask areaTask : beforeTruck.type0TaskList) {
+		if (!areaTask.equals(beforeTruck.currentAreaTask) && areaTask.isGot == true && beforeTruck.findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet_before.add(areaTask.orderId);
+		}
+	}
+	for (AreaTask areaTask : beforeTruck.type1TaskList) {
+		if (!areaTask.equals(beforeTruck.currentAreaTask) && areaTask.isGot == true && beforeTruck.findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet_before.add(areaTask.orderId);
+		}
+	}
+	for (AreaTask areaTask : beforeTruck.type2TaskList) {
+		if (!areaTask.equals(beforeTruck.currentAreaTask) && areaTask.isGot == true && beforeTruck.findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet_before.add(areaTask.orderId);
+		}
+	}
+	for (AreaTask areaTask : beforeTruck.type3TaskList) {
+		if (!areaTask.equals(beforeTruck.currentAreaTask) && areaTask.isGot == true && beforeTruck.findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet_before.add(areaTask.orderId);
+		}
+	}
+	for (DeliveryOrder order : beforeTruck.deliveryOrderList) {
+		if (!order.equals(beforeTruck.currentOrder) && order.state != 3) {
+			order.totalCost += cost_before;
+		}
+	}
+	for (DeliveryOrder order : beforeTruck.deliveryOrderList) {
+		if (!order.equals(beforeTruck.currentOrder) && order.state != 3 && orderIdSet_before.contains(order.id)) {
+			order.totalDistance += distance_before;
 		}
 	}
 }]]></EntryAction>
-						<ExitAction><![CDATA[if (currentAreaTask.state != 3) {
-	// if ((currentAreaTask.state == 2 && currentAreaTask.isGot == false) && (currentOrder.areaTaskList.get(currentAreaTask.index - 1).state == 2 && currentOrder.areaTaskList.get(currentAreaTask.index - 1).isGot == true)) {
+						<ExitAction><![CDATA[//if (currentAreaTask.state != 3) {
+if ((currentAreaTask.state == 2 && currentAreaTask.isGot == false) && (currentOrder.areaTaskList.get(currentAreaTask.index - 1).state == 2 && currentOrder.areaTaskList.get(currentAreaTask.index - 1).isGot == true)) {
 	Truck exchangeTruck = main.trucks.get(currentOrder.areaTaskList.get(currentAreaTask.index - 1).truckId);
 	ArrayList<AreaTask> areaTaskToReceiveList = new ArrayList<AreaTask>();
 	areaTaskToReceiveList.add(currentAreaTask);
@@ -6924,55 +7008,104 @@ checkWaitTime = 0;]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[if (currentAreaTask.state != 3) {
+						<EntryAction><![CDATA[if ((currentAreaTask.state == 2 && currentAreaTask.isGot == false) && (currentOrder.areaTaskList.get(currentAreaTask.index - 1).state == 2 && currentOrder.areaTaskList.get(currentAreaTask.index - 1).isGot == true)) {
+	// 当前车的成本计算
 	currentAreaTask.endTime = date();
-	int length = 0;
+	int length_current = 0;
 	for (DeliveryOrder order : deliveryOrderList) {
 		if (order.state != 3) {
-			length++;
+			length_current++;
 		}
 	}
-	double distance = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
-	double time = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
-	this.totalDistance += distance;
-	this.totalWorkTime += time;
-	double cost = (distance / 1000.0 * main.distanceEnergyConsumption) / length + time * (main.laborRate + main.depreciationRate) / length;
-	currentOrder.totalDistance += distance;
-	currentOrder.totalCost += cost;
-	Set<Integer> orderIdSet = new HashSet<>();
+	double distance_current = main.map.getDistanceByRoute(startLonLat[1], startLonLat[0], currentAreaTask.endLatitude, currentAreaTask.endLongitude);
+	double time_current = dateToTime(currentAreaTask.endTime) - dateToTime(currentAreaTask.startTime);
+	this.totalDistance += distance_current;
+	this.totalWorkTime += time_current;
+	double cost_current = (distance_current / 1000.0 * main.distanceEnergyConsumption) / length_current + time_current * (main.laborRate + main.depreciationRate) / length_current;
+	currentOrder.totalDistance += distance_current;
+	currentOrder.totalCost += cost_current;
+	Set<Integer> orderIdSet_current = new HashSet<>();
 	for (AreaTask areaTask : type0TaskList) {
 		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-			orderIdSet.add(areaTask.orderId);
+			orderIdSet_current.add(areaTask.orderId);
 		}
 	}
 	for (AreaTask areaTask : type1TaskList) {
 		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-			orderIdSet.add(areaTask.orderId);
+			orderIdSet_current.add(areaTask.orderId);
 		}
 	}
 	for (AreaTask areaTask : type2TaskList) {
 		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-			orderIdSet.add(areaTask.orderId);
+			orderIdSet_current.add(areaTask.orderId);
 		}
 	}
 	for (AreaTask areaTask : type3TaskList) {
 		if (!areaTask.equals(currentAreaTask) && areaTask.isGot == true && findOrderById(areaTask.orderId).state != 3) {
-			orderIdSet.add(areaTask.orderId);
+			orderIdSet_current.add(areaTask.orderId);
 		}
 	}
 	for (DeliveryOrder order : deliveryOrderList) {
 		if (!order.equals(currentOrder) && order.state != 3) {
-			order.totalCost += cost;
+			order.totalCost += cost_current;
 		}
 	}
 	for (DeliveryOrder order : deliveryOrderList) {
-		if (!order.equals(currentOrder) && order.state != 3 && orderIdSet.contains(order.id)) {
-			order.totalDistance += distance;
+		if (!order.equals(currentOrder) && order.state != 3 && orderIdSet_current.contains(order.id)) {
+			order.totalDistance += distance_current;
+		}
+	}
+
+	// 下一辆车的成本计算
+	Truck beforeTruck = main.trucks.get(currentOrder.areaTaskList.get(currentAreaTask.index - 1).truckId);
+	beforeTruck.currentAreaTask.endTime = date();
+	int length_before = 0;
+	for (DeliveryOrder order : beforeTruck.deliveryOrderList) {
+		if (order.state != 3) {
+			length_before++;
+		}
+	}
+	double distance_before = main.map.getDistanceByRoute(beforeTruck.startLonLat[1], beforeTruck.startLonLat[0], beforeTruck.currentAreaTask.endLatitude, beforeTruck.currentAreaTask.endLongitude);
+	double time_before = dateToTime(beforeTruck.currentAreaTask.endTime) - dateToTime(beforeTruck.currentAreaTask.startTime);
+	beforeTruck.totalDistance += distance_before;
+	beforeTruck.totalWorkTime += time_before;
+	double cost_before = (distance_before / 1000.0 * main.distanceEnergyConsumption) / length_before + time_before * (main.laborRate + main.depreciationRate) / length_before;
+	beforeTruck.currentOrder.totalDistance += distance_before;
+	beforeTruck.currentOrder.totalCost += cost_before;
+	Set<Integer> orderIdSet_before = new HashSet<>();
+	for (AreaTask areaTask : beforeTruck.type0TaskList) {
+		if (!areaTask.equals(beforeTruck.currentAreaTask) && areaTask.isGot == true && beforeTruck.findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet_before.add(areaTask.orderId);
+		}
+	}
+	for (AreaTask areaTask : beforeTruck.type1TaskList) {
+		if (!areaTask.equals(beforeTruck.currentAreaTask) && areaTask.isGot == true && beforeTruck.findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet_before.add(areaTask.orderId);
+		}
+	}
+	for (AreaTask areaTask : beforeTruck.type2TaskList) {
+		if (!areaTask.equals(beforeTruck.currentAreaTask) && areaTask.isGot == true && beforeTruck.findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet_before.add(areaTask.orderId);
+		}
+	}
+	for (AreaTask areaTask : beforeTruck.type3TaskList) {
+		if (!areaTask.equals(beforeTruck.currentAreaTask) && areaTask.isGot == true && beforeTruck.findOrderById(areaTask.orderId).state != 3) {
+			orderIdSet_before.add(areaTask.orderId);
+		}
+	}
+	for (DeliveryOrder order : beforeTruck.deliveryOrderList) {
+		if (!order.equals(beforeTruck.currentOrder) && order.state != 3) {
+			order.totalCost += cost_before;
+		}
+	}
+	for (DeliveryOrder order : beforeTruck.deliveryOrderList) {
+		if (!order.equals(beforeTruck.currentOrder) && order.state != 3 && orderIdSet_before.contains(order.id)) {
+			order.totalDistance += distance_before;
 		}
 	}
 }]]></EntryAction>
-						<ExitAction><![CDATA[if (currentAreaTask.state != 3) {
-	// if ((currentAreaTask.state == 2 && currentAreaTask.isGot == true) && (currentOrder.areaTaskList.get(currentAreaTask.index + 1).state == 2 && currentOrder.areaTaskList.get(currentAreaTask.index + 1).isGot == false)) {
+						<ExitAction><![CDATA[//if (currentAreaTask.state != 3) {
+if ((currentAreaTask.state == 2 && currentAreaTask.isGot == true) && (currentOrder.areaTaskList.get(currentAreaTask.index + 1).state == 2 && currentOrder.areaTaskList.get(currentAreaTask.index + 1).isGot == false)) {
 	Truck exchangeTruck = main.trucks.get(currentOrder.areaTaskList.get(currentAreaTask.index + 1).truckId);
 	ArrayList<AreaTask> areaTaskToDeliveryList = new ArrayList<AreaTask>();
 	areaTaskToDeliveryList.add(currentAreaTask);
@@ -10326,6 +10459,30 @@ pendingOrderList.add(msg);
 		<ImportSettings>
 		</ImportSettings>
 		<ExportSettings>
+			<ExportExcelResourceReference>
+				<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
+				<ClassName><![CDATA[C:/Users/lvsy/Desktop/customer已优化.xlsx]]></ClassName>
+			</ExportExcelResourceReference>
+			<TableReference>
+				<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
+				<ClassName><![CDATA[administrative_district]]></ClassName>
+			</TableReference>
+			<TableReference>
+				<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
+				<ClassName><![CDATA[area]]></ClassName>
+			</TableReference>
+			<TableReference>
+				<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
+				<ClassName><![CDATA[customer]]></ClassName>
+			</TableReference>
+			<TableReference>
+				<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
+				<ClassName><![CDATA[supermarket]]></ClassName>
+			</TableReference>
+			<TableReference>
+				<PackageName><![CDATA[gis_combined_transportation_v4]]></PackageName>
+				<ClassName><![CDATA[truck]]></ClassName>
+			</TableReference>
 		</ExportSettings>
 	</Database>
 	
@@ -10414,6 +10571,10 @@ pendingOrderList.add(msg);
 	<ModelResources>
 		<Resource>
 			<Path><![CDATA[result.xlsx]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[C:/Users/lvsy/Desktop/customer已优化.xlsx]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		</Resource>
 	</ModelResources>
